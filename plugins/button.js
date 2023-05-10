@@ -42,7 +42,7 @@ module.exports = plugin(
         },
 
         '&-contur': {
-          border: '2px solid var(--btn-color)'
+          border: '1px solid var(--btn-color)'
         },
 
         '&:focus': {
@@ -136,7 +136,7 @@ module.exports = plugin(
 
           return {
 
-            borderRadius: '6px',
+            borderRadius: '15px',
             height: size,
             paddingInline: `calc(${size} / 2)`
 

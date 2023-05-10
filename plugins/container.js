@@ -27,21 +27,19 @@ module.exports = plugin(
 
       [`@media(min-width: ${theme('screens.md')})`]: {
         '.container': {
-          '--padding-block': '60px',
           '--padding-inline': 'var(--md)'
         }
       },
 
       [`@media(min-width: ${theme('screens.lg')})`]: {
         '.container': {
-          '--padding-block': '70px',
+          '--padding-block': '60px',
           '--padding-inline': 'var(--lg)'
         }
       },
 
       [`@media(min-width: ${theme('screens.xl')})`]: {
         '.container': {
-          '--padding-block': '80px',
           '--padding-inline': 'var(--xl)',
 
           '&--distance': {

@@ -2,233 +2,259 @@ import Swiper from 'swiper/bundle'
 import 'swiper/css/bundle'
 
 import media from '../ts/functions/media'
-import quiz from '../ts/quiz'
+// import quiz from '../ts/quiz'
 
 const init = () => {
 
-  const gallerySlider = new Swiper('.gallery-slider .swiper', {
+  const workSlider = new Swiper('.work-slider .swiper', {
 
     pagination: {
 
-      el: '.gallery-slider .swiper-pagination',
+      el: '.work-slider .swiper-pagination',
       clickable: true
 
     },
 
-    navigation: {
-
-      prevEl: '.gallery-slider .swiper-button-prev',
-      nextEl: '.gallery-slider .swiper-button-next'
-
-    },
-
-    effect: 'coverflow',
-    slidesPerView: 1.3,
-    spaceBetween: 20,
-    grabCursor: true,
-    loop: true,
-    freeMode: true,
+    slidesPerView: 1.2,
+    spaceBetween: 16,
 
     breakpoints: {
 
       [media.sm]: {
 
-        slidesPerView: 2
-
-      },
-
-      [media.lg]: {
-
-        slidesPerView: 3
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        allowTouchMove: false
 
       }
 
     },
 
-    autoplay: {
-
-      delay: 3000,
-      stopOnLastSlide: false,
-      disableOnInteraction: false
-
-    }
-
   })
 
-  const productsSlider = new Swiper('.products-slider .swiper', {
+  // const gallerySlider = new Swiper('.gallery-slider .swiper', {
 
-    pagination: {
+  //   pagination: {
 
-      el: '.products-slider .swiper-pagination',
-      clickable: true
+  //     el: '.gallery-slider .swiper-pagination',
+  //     clickable: true
 
-    },
+  //   },
 
-    navigation: {
+  //   navigation: {
 
-      prevEl: '.products-slider .swiper-button-prev',
-      nextEl: '.products-slider .swiper-button-next'
+  //     prevEl: '.gallery-slider .swiper-button-prev',
+  //     nextEl: '.gallery-slider .swiper-button-next'
 
-    },
+  //   },
 
-    slidesPerView: 1.3,
-    slidesPerGroup: 1,
-    spaceBetween: 20,
-    grabCursor: true,
-    watchSlidesProgress: true,
+  //   effect: 'coverflow',
+  //   slidesPerView: 1.3,
+  //   spaceBetween: 20,
+  //   grabCursor: true,
+  //   loop: true,
+  //   freeMode: true,
 
-    breakpoints: {
+  //   breakpoints: {
 
-      [media.sm]: {
+  //     [media.sm]: {
 
-        slidesPerView: 2
+  //       slidesPerView: 2
 
-      },
+  //     },
 
-      [media.lg]: {
+  //     [media.lg]: {
 
-        slidesPerView: 3
+  //       slidesPerView: 3
 
-      },
+  //     }
 
-      [media.xl]: {
+  //   },
 
-        slidesPerView: 4
+  //   autoplay: {
 
-      }
+  //     delay: 3000,
+  //     stopOnLastSlide: false,
+  //     disableOnInteraction: false
 
-    }
+  //   }
 
-  })
+  // })
 
-  const quizImages = new Swiper('.quiz-images .swiper', {
+  // const productsSlider = new Swiper('.products-slider .swiper', {
 
-    effect: 'cube',
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    allowTouchMove: false
+  //   pagination: {
 
-  })
+  //     el: '.products-slider .swiper-pagination',
+  //     clickable: true
 
-  const quizSlider = new Swiper('.quiz-slider .swiper', {
+  //   },
 
-    navigation: {
+  //   navigation: {
 
-      prevEl: '.quiz-slider .swiper-button-prev',
-      nextEl: '.quiz-slider .swiper-button-next'
+  //     prevEl: '.products-slider .swiper-button-prev',
+  //     nextEl: '.products-slider .swiper-button-next'
 
-    },
+  //   },
 
-    pagination: {
+  //   slidesPerView: 1.3,
+  //   slidesPerGroup: 1,
+  //   spaceBetween: 20,
+  //   grabCursor: true,
+  //   watchSlidesProgress: true,
 
-      el: '.quiz-slider .swiper-pagination',
-      type: 'custom',
+  //   breakpoints: {
 
-      renderCustom: (swiper, current, total) => {
+  //     [media.sm]: {
 
-        return total - current
+  //       slidesPerView: 2
 
-      }
+  //     },
 
-    },
+  //     [media.lg]: {
 
-    effect: 'flip',
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    spaceBetween: 30,
-    allowTouchMove: false,
-    watchSlidesProgress: true,
+  //       slidesPerView: 3
 
-    on: {
+  //     },
 
-      slideChange: (swiper) => {
+  //     [media.xl]: {
 
-        quizImages.slideTo(swiper.activeIndex)
+  //       slidesPerView: 4
 
-        quiz.checkQuizSlide(swiper.visibleSlides[0])
+  //     }
 
-        if (swiper.visibleSlides[0] == swiper.slides[swiper.slides.length - 1]) {
+  //   }
 
-          swiper.el.closest('[data-quiz]').setAttribute('data-quiz-end', '')
+  // })
 
-        } else {
+  // const quizImages = new Swiper('.quiz-images .swiper', {
 
-          swiper.el.closest('[data-quiz]').removeAttribute('data-quiz-end')
+  //   effect: 'cube',
+  //   slidesPerView: 1,
+  //   slidesPerGroup: 1,
+  //   allowTouchMove: false
 
-        }
+  // })
 
-      }
+  // const quizSlider = new Swiper('.quiz-slider .swiper', {
 
-    }
+  //   navigation: {
 
-  })
+  //     prevEl: '.quiz-slider .swiper-button-prev',
+  //     nextEl: '.quiz-slider .swiper-button-next'
 
-  const descriptionBg = new Swiper('.description-bg .swiper', {
+  //   },
 
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    spaceBetween: 30,
-    speed: 1000,
-    allowTouchMove: false
+  //   pagination: {
 
-  })
+  //     el: '.quiz-slider .swiper-pagination',
+  //     type: 'custom',
 
-  const descriptionBullets = new Swiper('.description-bullets .swiper', {
+  //     renderCustom: (swiper, current, total) => {
 
-    slidesPerView: 3,
-    slidesPerGroup: 1,
-    spaceBetween: 20,
-    speed: 1000,
-    grabCursor: true,
+  //       return total - current
 
-    breakpoints: {
+  //     }
 
-      [media.md]: {
+  //   },
 
-        slidesPerView: 4
+  //   effect: 'flip',
+  //   slidesPerView: 1,
+  //   slidesPerGroup: 1,
+  //   spaceBetween: 30,
+  //   allowTouchMove: false,
+  //   watchSlidesProgress: true,
 
-      }
+  //   on: {
 
-    }
+  //     slideChange: (swiper) => {
 
-  })
+  //       quizImages.slideTo(swiper.activeIndex)
 
-  const descriptionInfo = new Swiper('.description-info .swiper', {
+  //       quiz.checkQuizSlide(swiper.visibleSlides[0])
 
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    spaceBetween: 30,
-    speed: 1000,
-    allowTouchMove: false
+  //       if (swiper.visibleSlides[0] == swiper.slides[swiper.slides.length - 1]) {
 
-  })
+  //         swiper.el.closest('[data-quiz]').setAttribute('data-quiz-end', '')
 
-  const descriptionSlider = new Swiper('.description-slider .swiper', {
+  //       } else {
 
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    spaceBetween: 30,
-    speed: 1000,
-    grabCursor: true,
+  //         swiper.el.closest('[data-quiz]').removeAttribute('data-quiz-end')
 
-    thumbs: {
+  //       }
 
-      swiper: descriptionBullets
+  //     }
 
-    },
+  //   }
 
-    on: {
+  // })
 
-      slideChange: (swiper) => {
+  // const descriptionBg = new Swiper('.description-bg .swiper', {
 
-        descriptionBg.slideTo(swiper.activeIndex)
-        descriptionInfo.slideTo(swiper.activeIndex)
+  //   slidesPerView: 1,
+  //   slidesPerGroup: 1,
+  //   spaceBetween: 30,
+  //   speed: 1000,
+  //   allowTouchMove: false
 
-      }
+  // })
 
-    }
+  // const descriptionBullets = new Swiper('.description-bullets .swiper', {
 
-  })
+  //   slidesPerView: 3,
+  //   slidesPerGroup: 1,
+  //   spaceBetween: 20,
+  //   speed: 1000,
+  //   grabCursor: true,
+
+  //   breakpoints: {
+
+  //     [media.md]: {
+
+  //       slidesPerView: 4
+
+  //     }
+
+  //   }
+
+  // })
+
+  // const descriptionInfo = new Swiper('.description-info .swiper', {
+
+  //   slidesPerView: 1,
+  //   slidesPerGroup: 1,
+  //   spaceBetween: 30,
+  //   speed: 1000,
+  //   allowTouchMove: false
+
+  // })
+
+  // const descriptionSlider = new Swiper('.description-slider .swiper', {
+
+  //   slidesPerView: 1,
+  //   slidesPerGroup: 1,
+  //   spaceBetween: 30,
+  //   speed: 1000,
+  //   grabCursor: true,
+
+  //   thumbs: {
+
+  //     swiper: descriptionBullets
+
+  //   },
+
+  //   on: {
+
+  //     slideChange: (swiper) => {
+
+  //       descriptionBg.slideTo(swiper.activeIndex)
+  //       descriptionInfo.slideTo(swiper.activeIndex)
+
+  //     }
+
+  //   }
+
+  // })
 
   window.Swiper = Swiper
 

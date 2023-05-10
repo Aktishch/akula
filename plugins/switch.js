@@ -14,7 +14,7 @@ module.exports = plugin(
         position: 'relative',
         userSelect: 'none',
         color: theme('colors.primary.DEFAULT'),
-        border: `1px solid ${theme('colors.gray.DEFAULT')}`,
+        border: `1px solid ${theme('colors.grey.DEFAULT')}`,
         transition: '0.2s linear',
         cursor: 'pointer',
 
@@ -91,7 +91,7 @@ module.exports = plugin(
           '&:not(:checked)::after': {
             left: '4px',
             right: '50px',
-            backgroundColor: theme('colors.gray.DEFAULT'),
+            backgroundColor: theme('colors.grey.DEFAULT'),
             transition: 'left 0.5s ease, right 0.4s ease 0.2s'
           },
 
@@ -132,7 +132,7 @@ module.exports = plugin(
 
       '@media(hover)': {
         '.switch:hover': {
-          boxShadow: `0 0 0 4px ${formatColor({ mode: 'rgba', color: parseColor(theme('colors.gray.DEFAULT')).color, alpha: 0.4 })}`
+          boxShadow: `0 0 0 4px ${formatColor({ mode: 'rgba', color: parseColor(theme('colors.grey.DEFAULT')).color, alpha: 0.4 })}`
         }
       },
 
