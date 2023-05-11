@@ -1,21 +1,8 @@
-import fileHandler from './file-handler'
-import formInputs from '../form-inputs'
-
 const init = (form: HTMLFormElement): boolean => {
 
   const labels = form.querySelectorAll('*[data-label="input"]') as NodeListOf<Element>
-  const download = form.querySelector('*[data-label="download"]') as HTMLElement
 
   let validate: boolean = true
-
-  if (download) {
-
-    const input = download.querySelector('*[data-input="file"]') as HTMLInputElement
-    const error = download.querySelector('*[data-error]') as HTMLElement
-
-    validate = fileHandler.init(input, error)
-
-  }
 
   labels.forEach((element: Element): void => {
 
@@ -82,34 +69,6 @@ const init = (form: HTMLFormElement): boolean => {
         } else {
 
           error.innerText = 'Пожалуйста, введите ваш номер!'
-
-        }
-
-      }
-
-      if (input.dataset.input == 'email') {
-
-        if (formInputs.inputEmail(input)) inputError()
-
-      }
-
-      if (input.dataset.input == 'select') {
-
-        if (input.value == '0') inputError()
-
-      }
-
-      if (input.dataset.input == 'text') {
-
-        if (input.value.length > 0 && input.value.length < 10) {
-
-          error.innerText = 'Введите не менее 10 символов!'
-
-          inputError()
-
-        } else {
-
-          error.innerText = 'Пожалуйста, оставьте отзыв!'
 
         }
 

@@ -28,7 +28,25 @@ const init = () => {
 
       }
 
-    },
+    }
+
+  })
+
+  const directionsSlider = new Swiper('.directions-slider .swiper', {
+
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    loop: true,
+    speed: 10000,
+    allowTouchMove: false,
+
+    autoplay: {
+
+      delay: 0,
+      stopOnLastSlide: false,
+      disableOnInteraction: false
+
+    }
 
   })
 

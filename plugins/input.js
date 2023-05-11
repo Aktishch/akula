@@ -5,6 +5,8 @@ module.exports = plugin(
 
   ({ addComponents, theme }) => {
 
+    const grey = parseColor(theme('colors.black.DEFAULT')).color
+
     addComponents({
 
       '.input': {
@@ -13,7 +15,7 @@ module.exports = plugin(
         height: theme('size.lg'),
         backgroundColor: theme('colors.white.DEFAULT'),
         padding: '12px 16px',
-        border: `1px solid ${formatColor({ mode: 'rgba', color: parseColor(theme('colors.grey.DEFAULT')).color, alpha: 0.3 })}`,
+        border: `1px solid ${formatColor({ mode: 'rgba', color: grey, alpha: 0.2 })}`,
         transition: '0.2s ease',
         userSelect: 'initial',
 
@@ -31,21 +33,21 @@ module.exports = plugin(
         },
 
         '&:first-of-type': {
-          borderTopLeftRadius: '8px',
-          borderBottomLeftRadius: '8px'
+          borderTopLeftRadius: '15px',
+          borderBottomLeftRadius: '15px'
         },
 
         '&:last-of-type': {
-          borderTopRightRadius: '8px',
-          borderBottomRightRadius: '8px'
+          borderTopRightRadius: '15px',
+          borderBottomRightRadius: '15px'
         },
 
         '&:not(&--error):focus': {
-          borderColor: theme('colors.grey.DEFAULT')
+          borderColor: formatColor({ mode: 'rgba', color: grey, alpha: 0.6 })
         },
 
         '&::placeholder': {
-          color: theme('colors.grey.DEFAULT')
+          color: formatColor({ mode: 'rgba', color: grey, alpha: 0.3 })
         },
 
         '&::disabled': {

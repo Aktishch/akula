@@ -55,6 +55,14 @@ module.exports = {
         DEFAULT: '#E9E9E9'
       },
 
+      orange: {
+        DEFAULT: '#F16628'
+      },
+
+      sky: {
+        DEFAULT: '#95BAD6'
+      },
+
       red: {
         DEFAULT: '#E32323'
       }

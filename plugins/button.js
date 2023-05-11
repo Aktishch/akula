@@ -81,6 +81,10 @@ module.exports = plugin(
             backgroundColor: 'var(--btn-fade)'
           },
 
+          '&.gradient:hover': {
+            backgroundImage: 'none'
+          },
+
           '&-fill:hover': {
             backgroundColor: 'var(--btn-dark)'
           },

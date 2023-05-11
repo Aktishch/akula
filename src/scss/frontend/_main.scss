@@ -10,6 +10,50 @@
   -webkit-text-fill-color: transparent;
 }
 
+// Блеклость
+.fading {
+  position: relative;
+
+  &::before,
+  &::after {
+    content         : "";
+    display         : none;
+    position        : absolute;
+    top             : 0;
+    bottom          : 0;
+    width           : 180px;
+    height          : 100%;
+    background-image: linear-gradient(90deg, theme("colors.white.DEFAULT") 0%, var(--color-none) 100%);
+    pointer-events  : none;
+    z-index         : 10;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right    : 0;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+
+  @screen lg {
+
+    &::before,
+    &::after {
+      display: block;
+    }
+  }
+
+  @screen xl {
+
+    &::before,
+    &::after {
+      width: 240px;
+    }
+  }
+}
+
 // Шапка документа
 .header {
   transform: translateY(var(--top));
@@ -110,8 +154,30 @@
 
 // Выгода
 .benefit {
+  &__block {
+    background-image: radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 73.05%);
+  }
+
   &__cube {
     background: radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 73.05%), linear-gradient(90deg, #1C7BB3 0%, #004F92 100%);
+  }
+}
+
+// Направления
+.directions {
+  &-wrapper {
+    transition-timing-function: linear !important;
+  }
+
+  &__check {
+    background-image: radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 73.05%);
+  }
+}
+
+// Этапы
+.stages {
+  &__item {
+    background-image: linear-gradient(90deg, #1C7BB3 0%, #004F92 100%);
   }
 }
 

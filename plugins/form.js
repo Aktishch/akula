@@ -46,21 +46,20 @@ module.exports = plugin(
         },
 
         '&-error': {
-          fontSize: theme('fontSize.12'),
-          color: theme('colors.white.DEFAULT'),
-          backgroundColor: theme('colors.red.DEFAULT'),
+          fontSize: theme('fontSize.14'),
+          fontWeight: '500',
+          color: theme('colors.red.DEFAULT'),
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center',
+          justifyContent: 'flex-end',
+          textAlign: 'right',
           position: 'absolute',
           left: 0,
           right: 0,
-          bottom: '-16px',
+          bottom: '-18px',
           height: '16px',
           opacity: 0,
           visiblity: 'hidden',
-          borderRadius: '4px',
           transition: '0.3s ease'
         }
       }

@@ -1,7 +1,7 @@
 // Libraries
 // // import yandexMap from './lib/yandex-map'
 // import airDatepicker from './lib/air-datepicker'
-// import fancybox from './lib/fancybox'
+import fancybox from './lib/fancybox'
 import sliderSwiper from './lib/slider-swiper'
 // import gsap from './lib/gsap'
 
@@ -19,19 +19,19 @@ import mobileMenu from './ts/mobile-menu'
 import waved from './ts/waved'
 // import movement from './ts/movement'
 // import bubbles from './ts/bubbles'
-// import listing from './ts/listing'
+import listing from './ts/listing'
 // import accordion from './ts/accordion'
 // import formatBg from './ts/format-bg'
 // import parallax from './ts/parallax'
 // import filter from './ts/filter'
 // import outNumber from './ts/out-number'
 // import writeText from './ts/write-text'
-// import formSubmit from './ts/form-submit'
+import formSubmit from './ts/form-submit'
 // import formSave from './ts/form-save'
 // import choiceFile from './ts/choice-file'
 // import copyLink from './ts/copy-link'
-// import formInputs from './ts/form-inputs'
-// import maskTel from './ts/mask-tel'
+import formInputs from './ts/form-inputs'
+import maskTel from './ts/mask-tel'
 // import password from './ts/password'
 // import quantity from './ts/quantity'
 // import range from './ts/range'
@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // // yandexMap.init()
   // airDatepicker.init()
-  // fancybox.init()
+  fancybox.init()
   sliderSwiper.init()
   scrollHeader.init()
   mobileMenu.init()
@@ -69,19 +69,19 @@ window.addEventListener('DOMContentLoaded', () => {
   waved.init()
   // movement.init()
   // bubbles.init()
-  // listing.init()
+  listing.init()
   // accordion.init()
   // formatBg.init()
   // parallax.init()
   // filter.init()
   // outNumber.init()
   // writeText.init()
-  // formSubmit.init()
+  formSubmit.init()
   // formSave.init()
   // choiceFile.init()
   // copyLink.init()
-  // formInputs.init()
-  // maskTel.init()
+  formInputs.init()
+  maskTel.init()
   // password.init()
   // quantity.init()
   // range.init()

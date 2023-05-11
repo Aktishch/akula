@@ -10,14 +10,11 @@ const formSubmit = (event: Event): void => {
   if (!formValidate.init(form)) return
 
   const formData: FormData = new FormData(form)
-  const queryString: string = new URLSearchParams(formData as URLSearchParams).toString()
   const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement
-
-  let requestUrl: string = ''
+  const requestUrl: string = '/ajax/submit-handler.php'
 
   if (form.dataset.form == 'submit') {
 
-    requestUrl = '/ajax/submit-handler.php'
     submitBtn.setAttribute('disabled', 'disabled')
 
     dialog.preloader()
@@ -46,16 +43,6 @@ const formSubmit = (event: Event): void => {
       console.log('The form has not been sent', error)
 
     )
-
-  }
-
-  if (form.dataset.form == 'params') {
-
-    requestUrl = `/dialogs/dialog-authorization.html?${queryString}`
-
-    dialog.close()
-
-    dialog.open(requestUrl)
 
   }
 

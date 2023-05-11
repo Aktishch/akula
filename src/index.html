@@ -14,7 +14,7 @@
     <h1 class="font-bold text-30 sm:text-36 md:text-42 xl:text-48 leading-2 mb-5 md:mb-7">
       <span class="text-gradient">Бухгалтерские услуги</span> для бизнеса различных форм собственности
     </h1>
-    <p class="font-normal text-14 md:text-16 leading-4 mb-10 md:mb-14 lg:mb-20">
+    <p class="font-normal text-16 leading-4 mb-10 md:mb-14 lg:mb-20">
       Мы готовы помочь восстановить бухучет, исправить ошибки бухгалтеров, оптимизировать налоги, провести сверки с налоговой и контрагентами, сдать отчетность вовремя и без головной боли
     </p>
     <div class="flex flex-col sm:flex-row flex-wrap items-center gap-4">
@@ -92,7 +92,7 @@
 ] %>
 
 <section class="work container">
-  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md-mb-8">Начать работать с нами просто</h2>
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Начать работать с нами просто</h2>
   <div class="work-slider">
     <div class="swiper swiper--overwrap">
       <div class="work-wrapper swiper-wrapper flex sm:grid sm:grid-cols-2 sm:gap-5 lg:gap-8">
@@ -118,18 +118,319 @@
 
 <!-- Выгода -->
 
-<section class="benefit container bg-black bg-opacity-10">
-  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md-mb-8">Выгода в каждой детали</h2>
-  <div class="grid grid-cols-12 gap-5">
-    <div class="col-4 row-2">
-      <div class=""></div>
+<section class="benefit container bg-black bg-opacity-5 overflow-hidden">
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Выгода в каждой детали</h2>
+  <div class="grid grid-cols-12 md:auto-rows-[180px] gap-3 sm:gap-5">
+    <div class="order-1 col-12 md:col-6 xl:col-4 row-2">
+      <div class="relative h-[250px] md:h-full">
+        <div class="benefit__block pack bg-primary rounded-6 h-full">
+          <picture>
+            <source srcset="img/pictures/waves.webp" type="image/webp">
+            <img class="image mix-blend-soft-light" src="img/pictures/waves.png" alt="">
+          </picture>
+        </div>
+        <picture>
+          <source srcset="img/pictures/woman.webp" type="image/webp">
+          <img class="absolute bottom-0 right-0 w-auto md:w-[470px] max-w-none h-full md:h-auto" src="img/pictures/woman.png" alt="">
+        </picture>
+      </div>
     </div>
-    <div class="col-2 row-1">
-      <div class="flex flex-col items-center justify-center bg-white rounded-6 shadow-md p-3">
-        <div class="benefit__cube flex items-center justify-center rounded-3 w-14 h-14 mb-6"></div>
+    <div class="order-3 xl:order-2 col-6 md:col-3 xl:col-2 row-1">
+      <div class="flex flex-col items-center lg:justify-center bg-white rounded-6 shadow-md h-full py-5 px-3 lg:py-3">
+        <div class="benefit__cube flex items-center justify-center rounded-3 w-14 h-14 mb-3 sm:mb-6">
+          <img class="icon text-30" src="img/pictures/money.svg" alt="">
+        </div>
+        <h4 class="font-semibold text-center text-14 sm:text-16 leading-3">Уменьшение затрат <br> на бухгалтерию</h4>
+      </div>
+    </div>
+    <div class="order-2 xl:order-3 col-12 md:col-6 xl:col-4 row-1">
+      <div class="benefit__block bg-primary text-white rounded-6 overflow-hidden h-full">
+        <div class="flex items-center bg-primary py-4 px-4 smd:px-6">
+          <img class="icon text-30 mr-3" src="img/pictures/book.svg" alt="">
+          <h4 class="font-bold text-24 leading-3">Непрерывно обучаем</h4>
+        </div>
+        <div class="p-4 sm:p-6">
+          <p class="font-medium text-16 sm:text-18 leading-3 opacity-80">И экзаменуем специалистов за свой счет, чтобы быть уверенными, что вы получите лучшее обслуживание</p>
+        </div>
+      </div>
+    </div>
+    <div class="order-5 xl:order-4 col-12 md:col-6 xl:col-2 row-1 xl:row-2">
+      <div class="benefit__banner relative gradient rounded-5 overflow-hidden h-full py-5 px-4 sm:py-10 sm:px-6">
+        <div class="hidden xl:flex items-end absolute inset-0">
+          <picture>
+            <source srcset="img/pictures/benefit.webp" type="image/webp">
+            <img class="block w-full" src="img/pictures/benefit.png" alt="">
+          </picture>
+        </div>
+        <div class="relative text-white">
+          <h4 class="font-bold text-24 leading-3 mb-3 sm:mb-6">Важно!</h4>
+          <p class="font-medium text-16 sm:text-18 leading-3 opacity-80">Несем полную финансовую ответственность за нашу работу</p>
+        </div>
+      </div>
+    </div>
+    <div class="order-4 xl:order-5 col-6 md:col-3 xl:col-2 row-1">
+      <div class="flex flex-col items-center lg:justify-center bg-white rounded-6 shadow-md h-full py-5 px-3 lg:py-3">
+        <div class="benefit__cube flex items-center justify-center rounded-3 w-14 h-14 mb-3 sm:mb-6">
+          <img class="icon text-30" src="img/pictures/protect.svg" alt="">
+        </div>
+        <h4 class="font-semibold text-center text-14 sm:text-16 leading-3">Безопасность <br> данных</h4>
+      </div>
+    </div>
+    <div class="order-6 col-6 md:col-3 xl:col-2 row-1">
+      <div class="flex flex-col items-center lg:justify-center bg-grey rounded-6 h-full py-5 px-3 lg:py-3">
+        <div class="benefit__cube flex items-center justify-center rounded-3 w-14 h-14 mb-3 sm:mb-6">
+          <img class="icon text-30" src="img/pictures/card.svg" alt="">
+        </div>
+        <h4 class="font-semibold text-center text-14 sm:text-16 leading-3">Работа с главным <br> бухгалтером</h4>
+      </div>
+    </div>
+    <div class="order-7 col-6 md:col-3 xl:col-2 row-1">
+      <div class="flex flex-col items-center lg:justify-center bg-grey rounded-6 h-full py-5 px-3 lg:py-3">
+        <div class="benefit__cube flex items-center justify-center rounded-3 w-14 h-14 mb-3 sm:mb-6">
+          <img class="icon text-30" src="img/pictures/message.svg" alt="">
+        </div>
+        <h4 class="font-semibold text-center text-14 sm:text-16 leading-3">Контроль работы <br> в режиме online</h4>
       </div>
     </div>
   </div>
+</section>
+
+<!-- Направления -->
+
+<section class="directions container fading overflow-hidden">
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Оказываем бухгалтерскую помощь по многим направлениям</h2>
+  <div class="directions-slider mb-4">
+    <div class="swiper overflow-visible">
+      <div class="directions-wrapper swiper-wrapper">
+        <% for (var i = 0; i < 10; i++) { %>
+          <div class="swiper-slide h-auto w-max">
+            <div class="flex items-center relative rounded-3 sm:rounded-6 border border-solid border-black border-opacity-20 p-4 sm:p-6" data-waved="dark">
+              <div class="directions__check flex items-center justify-center bg-primary rounded-2 sm:rounded-4 min-w-[40px] w-[40px] h-[40px] sm:min-w-[54px] sm:w-[54px] sm:h-[54px] mr-3 sm:mr-6">
+                <img class="icon text-20 sm:text-26" src="img/pictures/checkbox.svg" alt="">
+              </div>
+              <p class="font-medium text-16 md:text-18 leading-4">Внесение изменений в единый <br> государственный реестр</p>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="directions-slider">
+    <div class="swiper overflow-visible" dir="rtl">
+      <div class="directions-wrapper swiper-wrapper">
+        <% for (var i = 0; i < 10; i++) { %>
+          <div class="swiper-slide h-auto w-max" dir="ltr">
+            <div class="flex items-center relative rounded-3 sm:rounded-6 border border-solid border-black border-opacity-20 p-4 sm:p-6" data-waved="dark">
+              <div class="directions__check flex items-center justify-center bg-primary rounded-2 sm:rounded-4 min-w-[40px] w-[40px] h-[40px] sm:min-w-[54px] sm:w-[54px] sm:h-[54px] mr-3 sm:mr-6">
+                <img class="icon text-20 sm:text-26" src="img/pictures/checkbox.svg" alt="">
+              </div>
+              <p class="font-medium text-16 md:text-18 leading-4">Составление договоров, претензий, писем <br> в надзорные органы</p>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Услуги -->
+
+<% var services = [
+  {
+    title: 'Аутсорсинг',
+    ul: ['Бухгалтерское обслуживание', 'Кадровый учет', 'Расчет зарплаты'],
+    text: 'Мы заверяем все отчеты своей электронной подписью, поэтому несем полную ответственность за качество своей работы. Если санкции возникнут по нашей вине, мы компенсируем их из своего кошелька. А чтобы вы были уверены, что все идет своим чередом, предоставляем доступ ко всей отчетности в режиме 365/24/7',
+    price: 'от 4 000 ₽'
+  },
+  {
+    title: 'Консалтинг',
+    ul: ['Налоговое и юридическое консультирование', 'Составление договоров, претензий, писем', 'Решение нестандартных задач'],
+    text: 'Переводим с бухгалтерского языка на человеческий. Никаких аббревиатур и сложных терминов. Раскладываем все по полочкам, так чтобы сложные вопросы были доступны для понимания каждому.',
+    price: 'от 1 000 ₽'
+  },
+  {
+    title: 'Регистрация бизнеса',
+    ul: ['Помощь в регистрации бизнеса по всей стране', 'Изготовление печатей и штампов', 'Внесение изменений в ЕГРЮЛ'],
+    text: 'Без госпошлин, очередей в налоговой или МФЦ, даже без личного посещения. Подберем ОКВЭДы, систему налогообложения, поможем выбрать банк, соответствующий потребностям вашего бизнеса. Начните свое дело вместе с нами.',
+    price: 'от 0 ₽'
+  },
+] %>
+
+<section class="services container relative bg-primary overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="pack w-full h-full">
+      <picture>
+        <source srcset="img/pictures/services-bg.webp" type="image/webp">
+        <img class="image mix-blend-overlay" src="img/pictures/services-bg.png" alt="">
+      </picture>
+    </div>
+  </div>
+  <div class="relative text-white">
+    <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Наши услуги</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8 text-black">
+      <% for (var i = 0; i < services.length; i++) { %>
+        <div class="flex flex-col bg-white rounded-6 overflow-hidden">
+          <div class="bg-grey py-6 px-5 lg:px-10">
+            <h4 class="font-bold text-20 sm:text-24 leading-2 tracking-wide"><%= services[i].title %></h4>
+          </div>
+          <div class="flex flex-col items-start flex-grow py-3 px-5 sm:py-6 lg:px-10">
+            <ul class="flex flex-col gap-3 mb-3 sm:mb-6">
+              <% for (var j = 0; j < services[i].ul.length; j++) { %>
+                <li class="flex items-center text-16">
+                  <svg class="icon text-orange mr-2">
+                    <use xlink:href="img/icons.svg#check">
+                  </svg>
+                  <span class="font-medium leading-3 opacity-60"><%= services[i].ul[j] %></span>
+                </li>
+              <% } %>
+            </ul>
+            <p class="font-normal text-16 leading-4 mb-4 sm:mb-6"><%= services[i].text %></p>
+            <p class="font-bold uppercase text-20 sm:text-24 leading-4 mb-4 sm:mb-6 mt-auto"><%= services[i].price %></p>
+            <button class="btn btn-second btn-lg btn-fill gradient" data-waved="light">Выбрать услугу</button>
+          </div>
+        </div>
+      <% } %>
+      <div class="relative bg-white rounded-6 overflow-hidden py-6 px-5 lg:px-10">
+        <div class="hidden lg:block absolute inset-0">
+          <div class="pack w-full h-full">
+            <div class="loader">
+              <span class="loader-progress">
+                <svg class="loader-icon icon">
+                  <use xlink:href="img/icons.svg#loader">
+                </svg>
+              </span>
+            </div>
+            <picture>
+              <source srcset="img/pictures/calc.webp" type="image/webp">
+              <img class="image" loading="lazy" src="img/pictures/calc.jpg" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="relative">
+          <h4 class="font-bold text-20 sm:text-24 leading-2 tracking-wide mb-2">Персональная бесплатная консультация</h4>
+          <p class="font-normal text-16 leading-4 opacity-80 mb-4">Оставьте свои контакты, мы перезвоним вам и с удовольствием ответим на все ваши вопросы</p>
+          <form class="form w-full max-w-[325px] mb-4" data-form="submit">
+            <input type="hidden" value="Главная" name="theme">
+            <label class="form-label mb-4" data-label="input">
+              <span class="font-medium text-18 mb-3">Ваше имя</span>
+              <div class="form-wrapper">
+                <div class="input-cover">
+                  <input class="input" data-input="name" type="text" placeholder="Введите имя..." name="name">
+                </div>
+                <span class="form-error" data-error>Пожалуйста, введите ваше имя!</span>
+              </div>
+            </label>
+            <label class="form-label mb-5" data-label="input">
+              <span class="font-medium text-18 mb-3">Телефон</span>
+              <div class="form-wrapper">
+                <div class="input-cover">
+                  <input class="input" data-input="tel" type="tel" placeholder="+7 (999) 999-99-99" name="tel">
+                </div>
+                <span class="form-error" data-error>Пожалуйста, введите ваш номер!</span>
+              </div>
+            </label>
+            <button class="btn btn-primary btn-lg btn-fill" data-waved="dark" type="submit">Получить консультацию</button>
+          </form>
+          <div class="font-normal text-14 md:text-16 leading-4 cursor-pointer">
+            <span class="opacity-60">Отправляя форму, вы даете согласие на</span> <br class="xl:hidden">
+            <span class="underline underline-offset-4">обработку персональных данных</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Этапы -->
+
+<% var stages = [
+  {
+    item: '',
+    data: '',
+    title: 'Безопасность',
+    icon: 'lock',
+    text: 'Мы храним данные на сервере 1С, что обеспечивает их <b>полную безопасность</b>. Даже если какой-то компьютер поломается, ваша бухгалтерия не пострадает, а бухгалтер будет работать с другого устройства.'
+  },
+  {
+    item: '',
+    data: '',
+    title: 'Проверка',
+    icon: 'list',
+    text: 'Регулярно <b>сверяемся</b> с налоговой, чтобы все налоги были отражены правильно и не потерялись.'
+  },
+  {
+    item: '',
+    data: '',
+    title: 'Гарантия',
+    icon: 'shield',
+    text: 'Платим пени и штрафы из <b>собственного</b> кармана, если они возникли по нашей вине. Финансовая ответственность <b>закреплена</b> в договоре.'
+  },
+  {
+    item: 'hidden sm:block',
+    data: 'data-listing-item',
+    title: 'Свободное время',
+    icon: 'clock',
+    text: 'Вам не надо отвлекаться на бухгалтерские задачи: мы сами <b>скачаем</b> выписки, <b>подготовим</b> платежки, <b>соберем</b> информацию из кабинета ОФД.'
+  },
+  {
+    item: 'hidden sm:block',
+    data: 'data-listing-item',
+    title: 'Порядок',
+    icon: 'folder',
+    text: 'Бережно <b>раскладываем</b> по папочкам и <b>храним</b> ваши документы.'
+  },
+  {
+    item: 'hidden sm:block',
+    data: 'data-listing-item',
+    title: 'Надежность',
+    icon: 'key',
+    text: 'Сотрудники <b>подписывают</b> соглашение о коммерческой тайне, поэтому ваша информация не «утечет» на сторону.'
+  },
+  {
+    item: 'hidden sm:block',
+    data: 'data-listing-item',
+    title: 'Отдых',
+    icon: 'sofa',
+    text: '<b>Сдаем все</b> отчеты без вашего участия: вы можете спокойно отдыхать даже в отчетный период.'
+  },
+  {
+    item: 'hidden sm:block',
+    data: 'data-listing-item',
+    title: 'Обучение',
+    icon: 'cap',
+    text: 'Постоянно <b>обучаемся</b>, чтобы быть в курсе тенденций налогового законодательства и <b>оградить</b> вас от необдуманных решений.'
+  },
+  {
+    item: 'hidden sm:block',
+    data: 'data-listing-item',
+    title: 'Консультация',
+    icon: 'calc',
+    text: '<b>Бесплатное</b> консультирование вашего бизнеса.'
+  }
+] %>
+
+<section class="stages container" data-listing="3">
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Как мы работаем</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8">
+    <% for (var i = 0; i < stages.length; i++) { %>
+      <div class="<%= stages[i].item %> min-h-[230px]" <%= stages[i].data %>>
+        <div class="stages__item card h-full">
+          <div class="card-content text-white">
+            <div class="flex items-center justify-between gap-5 bg-sky p-5">
+              <h4 class="font-bold text-20 md:text-24"><%= stages[i].title %></h4>
+              <svg class="icon text-34 sm:text-46">
+                <use xlink:href="img/icons.svg#<%= stages[i].icon %>">
+              </svg>
+            </div>
+            <div class="flex items-center h-full">
+              <p class="font-normal text-16 leading-4 p-5"><%= stages[i].text %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+  <button class="sm:hidden btn btn-second btn-lg btn-fill gradient mx-auto mt-10" data-listing-show data-waved="light">Показать ещё</button>
 </section>
 
 <%= require('./includes/footer.html').default %>
