@@ -3,28 +3,32 @@
   display        : flex;
   align-items    : center;
   justify-content: space-between;
-  width          : 110px;
-  border         : 1px solid theme("colors.grey.DEFAULT");
-  border-radius  : 40px;
-  padding        : 5px;
+  width          : 145px;
 
   &-btn {
-    min-width    : 32px;
-    width        : 32px;
-    height       : 32px;
-    border-radius: 50%;
+    min-width: 35px;
+    width    : 35px;
+    height   : 56px;
+
+    &:first-of-type {
+      border-top-left-radius   : 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    &:last-of-type {
+      border-top-right-radius   : 8px;
+      border-bottom-right-radius: 8px;
+    }
   }
 
   &-cover {
-    max-width: 24px;
+    max-width: 60px;
   }
 
   &-input {
-    height          : auto;
-    text-align      : center;
-    border          : none;
-    border-radius   : 0;
-    padding         : 0;
-    background-color: var(--color-none);
+    height       : 56px;
+    text-align   : center;
+    border-radius: 0 !important;
+    padding      : 0;
   }
 }

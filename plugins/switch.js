@@ -5,6 +5,8 @@ module.exports = plugin(
 
   ({ addComponents, theme }) => {
 
+    const grey = parseColor(theme('colors.black.DEFAULT')).color
+
     addComponents({
 
       '.switch': {
@@ -14,7 +16,8 @@ module.exports = plugin(
         position: 'relative',
         userSelect: 'none',
         color: theme('colors.primary.DEFAULT'),
-        border: `1px solid ${theme('colors.grey.DEFAULT')}`,
+        backgroundColor: theme('colors.white.DEFAULT'),
+        border: `1px solid ${formatColor({ mode: 'rgba', color: grey, alpha: 0.2 })}`,
         transition: '0.2s linear',
         cursor: 'pointer',
 
@@ -22,7 +25,7 @@ module.exports = plugin(
           minWidth: '24px',
           width: '24px',
           height: '24px',
-          borderRadius: '2px',
+          borderRadius: '5px',
 
           '&::after': {
             content: '""',
@@ -47,9 +50,9 @@ module.exports = plugin(
         },
 
         '&--radio': {
-          minWidth: '20px',
-          width: '20px',
-          height: '20px',
+          minWidth: '24px',
+          width: '24px',
+          height: '24px',
           borderRadius: '50%',
 
           '&::after': {
@@ -57,7 +60,7 @@ module.exports = plugin(
             display: 'block',
             width: '12px',
             height: '12px',
-            backgroundColor: 'currentColor',
+            backgroundColor: theme('colors.white.DEFAULT'),
             borderRadius: 'inherit',
             transform: 'scale(0)',
             transition: 'opacity 0.1s linear, transform 0.1s linear',
@@ -65,6 +68,9 @@ module.exports = plugin(
           },
 
           '&:checked': {
+            borderColor: 'currentColor',
+            backgroundColor: 'currentColor',
+
             '&::after': {
               opacity: 1,
               transform: 'scale(1)'
@@ -132,7 +138,7 @@ module.exports = plugin(
 
       '@media(hover)': {
         '.switch:hover': {
-          boxShadow: `0 0 0 4px ${formatColor({ mode: 'rgba', color: parseColor(theme('colors.grey.DEFAULT')).color, alpha: 0.4 })}`
+          boxShadow: `0 0 0 4px ${formatColor({ mode: 'rgba', color: grey, alpha: 0.1 })}`
         }
       },
 

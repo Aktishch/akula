@@ -143,6 +143,24 @@
   }
 }
 
+// Квиз
+.quiz {
+  &-slider {
+    &[data-quiz="stop"] .swiper-button-next {
+      pointer-events: none;
+      opacity       : 0.5;
+    }
+
+    &[data-quiz-end] .swiper-button-next {
+      display: none;
+    }
+
+    &[data-quiz-end] &-submit {
+      display: flex;
+    }
+  }
+}
+
 // Работа
 .work {
   @screen sm {
@@ -174,24 +192,17 @@
   }
 }
 
-// Этапы
-.stages {
-  &__item {
-    background-image: linear-gradient(90deg, #1C7BB3 0%, #004F92 100%);
+// Вопросы
+.questions {
+  &__accordion[data-accordion="active"] &__btn {
+    background: theme("colors.primary.DEFAULT");
+
+    &:focus {
+      --btn-focus: theme("colors.primary.DEFAULT / 40%");
+    }
+  }
+
+  &__accordion[data-accordion="active"] &__arrow {
+    transform: rotate(90deg);
   }
 }
-
-// Квиз
-// .quiz {
-//   &-slider {
-//     &[data-quiz="stop"] .swiper-button-next {
-//       pointer-events: none;
-//       opacity       : 0.5;
-//     }
-
-//     &[data-quiz-end] &-bottom {
-//       visibility: hidden;
-//       opacity   : 0;
-//     }
-//   }
-// }

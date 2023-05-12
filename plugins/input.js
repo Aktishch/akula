@@ -50,7 +50,7 @@ module.exports = plugin(
           color: formatColor({ mode: 'rgba', color: grey, alpha: 0.3 })
         },
 
-        '&::disabled': {
+        '&[disabled="disabled"]': {
           pointerEvents: 'none',
           opacity: 0.5
         }

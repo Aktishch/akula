@@ -46,6 +46,45 @@ const formSubmit = (event: Event): void => {
 
   }
 
+  if (form.dataset.form == 'quiz') {
+
+    submitBtn.setAttribute('disabled', 'disabled')
+
+    dialog.preloader()
+
+    fetch(requestUrl, {
+
+      method: 'POST',
+      body: formData
+
+    }).then((response: Response): any => {
+
+      return response.text()
+
+    }).then((response: any): void => {
+
+      form.reset()
+
+      submitBtn.removeAttribute('disabled')
+
+      const quiz = form.querySelector('*[data-quiz]') as HTMLElement
+      const quizSuccess = form.querySelector('*[data-quiz-success]') as HTMLElement
+
+      quiz.remove()
+
+      quizSuccess.classList.remove('hidden')
+      quizSuccess.classList.add('flex')
+
+      dialog.close()
+
+    }).catch((error: string): void =>
+
+      console.log('The form has not been sent', error)
+
+    )
+
+  }
+
 }
 
 const init = (): void => {

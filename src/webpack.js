@@ -1,5 +1,5 @@
 // Libraries
-// // import yandexMap from './lib/yandex-map'
+import yandexMap from './lib/yandex-map'
 // import airDatepicker from './lib/air-datepicker'
 import fancybox from './lib/fancybox'
 import sliderSwiper from './lib/slider-swiper'
@@ -20,7 +20,7 @@ import waved from './ts/waved'
 // import movement from './ts/movement'
 // import bubbles from './ts/bubbles'
 import listing from './ts/listing'
-// import accordion from './ts/accordion'
+import accordion from './ts/accordion'
 // import formatBg from './ts/format-bg'
 // import parallax from './ts/parallax'
 // import filter from './ts/filter'
@@ -33,17 +33,18 @@ import formSubmit from './ts/form-submit'
 import formInputs from './ts/form-inputs'
 import maskTel from './ts/mask-tel'
 // import password from './ts/password'
-// import quantity from './ts/quantity'
+import quantity from './ts/quantity'
 // import range from './ts/range'
 // import player from './ts/player'
 // import basket from './ts/basket'
 // import warning from './ts/warning'
 // import horizontalScrolling from './ts/horizontal-scrolling'
-// import quiz from './ts/quiz'
+import quiz from './ts/quiz'
 // import compare from './ts/compare'
 // import timeCounter from './ts/time-counter'
 // import timer from './ts/timer'
 // import worldMap from './ts/world-map'
+import transport from './ts/transport'
 import preloader from './ts/preloader'
 
 // Style
@@ -52,10 +53,8 @@ import './scss/index.scss'
 // Connection
 window.addEventListener('DOMContentLoaded', () => {
 
-  // // yandexMap.init()
   // airDatepicker.init()
   fancybox.init()
-  sliderSwiper.init()
   scrollHeader.init()
   mobileMenu.init()
   // progressLine.init()
@@ -70,7 +69,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // movement.init()
   // bubbles.init()
   listing.init()
-  // accordion.init()
+  accordion.init()
   // formatBg.init()
   // parallax.init()
   // filter.init()
@@ -83,12 +82,12 @@ window.addEventListener('DOMContentLoaded', () => {
   formInputs.init()
   maskTel.init()
   // password.init()
-  // quantity.init()
+  quantity.init()
+  transport.init()
   // range.init()
   // player.init()
   // basket.init()
   // horizontalScrolling.init()
-  // quiz.init()
   // compare.init()
   // timeCounter.init()
   // timer.init()
@@ -98,6 +97,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('load', () => {
 
+  yandexMap.init()
+  sliderSwiper.init()
+  quiz.init()
   // gsap.init()
   // warning.init()
   preloader.init()

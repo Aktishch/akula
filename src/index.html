@@ -1,11 +1,40 @@
-<% var data = {
+<%
 
-  title: 'Акула',
-  status: true
+  var data = {
 
-} %>
+    title: 'Акула',
+    status: true
 
-<%= _.template(require('./includes/header.html').default)({data}) %>
+  }
+
+  var nav = [
+    {
+      id: '',
+      text: 'Наши услуги'
+    },
+    {
+      id: '',
+      text: 'Преимущества'
+    },
+    {
+      id: '',
+      text: 'О нас'
+    },
+    {
+      id: '',
+      text: 'Вопросы'
+    },
+    {
+      id: '',
+      text: 'Контакты'
+    }
+  ]
+
+  var social = ['tg', 'inst', 'vk', 'wa']
+
+%>
+
+<%= _.template(require('./includes/header.html').default)({data, nav, social}) %>
 
 <!-- Главный блок -->
 
@@ -48,7 +77,319 @@
   </div>
 </main>
 
-<section></section>
+<!-- Квиз -->
+
+<section class="quiz container bg-black bg-opacity-5">
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Узнайте стоимость бухгалтерского обслуживания для вас</h2>
+  <div class="flex items-center justify-between bg-white rounded-4 sm:rounded-6 shadow-md w-full max-w-[700px] xl:max-w-none xl:p-4 mx-auto">
+    <form class="form w-full xl:max-w-[520px]" data-form="quiz">
+      <div class="quiz-slider" data-quiz="stop">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide h-full pt-8 pb-4 px-4 sm:pb-8 sm:px-8" data-quiz-slide>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1 mb-4 sm:mb-6">
+                <div class="flex items-center gap-1 font-semibold text-blue text-18 leading-3">
+                  Шаг <div class="swiper-pagination w-auto"></div>
+                </div>
+                <div class="font-semibold text-18 leading-3">Выберите вид деятельности</div>
+              </div>
+              <div class="flex flex-col gap-2 sm:gap-4">
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="Услуги" name="activity">
+                  <span class="font-medium text-14 sm:text-16">Услуги</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="Розничная торговля" name="activity">
+                  <span class="font-medium text-14 sm:text-16">Розничная торговля</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="Оптовая торговля" name="activity">
+                  <span class="font-medium text-14 sm:text-16">Оптовая торговля</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="Торговля по агентскому договору/договору комиссии" name="activity">
+                  <span class="font-medium text-14 sm:text-16">Торговля по агентскому договору/договору комиссии</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="Производство" name="activity">
+                  <span class="font-medium text-14 sm:text-16">Производство</span>
+                </label>
+              </div>
+            </div>
+            <div class="swiper-slide h-full pt-8 pb-4 px-4 sm:pb-8 sm:px-8" data-quiz-slide>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1 mb-4 sm:mb-6">
+                <div class="flex items-center gap-1 font-semibold text-blue text-18 leading-3">
+                  Шаг <div class="swiper-pagination w-auto"></div>
+                </div>
+                <div class="font-semibold text-18 leading-3">Выберите систему налогообложения</div>
+              </div>
+              <div class="flex flex-col gap-2 sm:gap-4">
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="Общая система налогообложения" name="taxes">
+                  <span class="font-medium text-14 sm:text-16">Общая система налогообложения</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="Упрощённая «доходы»" name="taxes">
+                  <span class="font-medium text-14 sm:text-16">Упрощённая «доходы»</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="Упрощённая «доходы минус расходы»" name="taxes">
+                  <span class="font-medium text-14 sm:text-16">Упрощённая «доходы минус расходы»</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="Патентная" name="taxes">
+                  <span class="font-medium text-14 sm:text-16">Патентная</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="ЕСХН" name="taxes">
+                  <span class="font-medium text-14 sm:text-16">ЕСХН</span>
+                </label>
+              </div>
+            </div>
+            <div class="swiper-slide h-full pt-8 pb-4 px-4 sm:pb-8 sm:px-8" data-quiz-slide>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1 mb-4 sm:mb-6">
+                <div class="flex items-center gap-1 font-semibold text-blue text-18 leading-3">
+                  Шаг <div class="swiper-pagination w-auto"></div>
+                </div>
+                <div class="font-semibold text-18 leading-3">Введите количество сотрудников</div>
+              </div>
+              <div class="quantity" data-quantity>
+                <button class="quantity-btn btn btn-black btn-contur border-black border-opacity-20" data-quantity-decrease data-waved="dark" type="button">-</button>
+                <div class="quantity-cover input-cover">
+                  <input class="quantity-input input" data-input="number" type="text" value="1" name="quantity">
+                </div>
+                <button class="quantity-btn btn btn-black btn-contur border-black border-opacity-20" data-quantity-increase data-waved="dark" type="button">+</button>
+              </div>
+            </div>
+            <div class="swiper-slide h-full pt-8 pb-4 px-4 sm:pb-8 sm:px-8" data-quiz-slide>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1 mb-4 sm:mb-6">
+                <div class="flex items-center gap-1 font-semibold text-blue text-18 leading-3">
+                  Шаг <div class="swiper-pagination w-auto"></div>
+                </div>
+                <div class="font-semibold text-18 leading-3">Наличие ККТ и эквайринга</div>
+              </div>
+              <div class="flex flex-col gap-2 sm:gap-4">
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="Есть" name="acquiring">
+                  <span class="font-medium text-14 sm:text-16">Есть</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="Нет" name="acquiring">
+                  <span class="font-medium text-14 sm:text-16">Нет</span>
+                </label>
+              </div>
+            </div>
+            <div class="swiper-slide h-full pt-8 pb-4 px-4 sm:pb-8 sm:px-8" data-quiz-slide>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1 mb-4 sm:mb-6">
+                <div class="flex items-center gap-1 font-semibold text-blue text-18 leading-3">
+                  Шаг <div class="swiper-pagination w-auto"></div>
+                </div>
+                <div class="font-semibold text-18 leading-3">Количество операций в месяц</div>
+              </div>
+              <div class="flex flex-col gap-2 sm:gap-4">
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="До 30" name="operation">
+                  <span class="font-medium text-14 sm:text-16">До 30</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="31-50" name="operation">
+                  <span class="font-medium text-14 sm:text-16">31-50</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="51-100" name="operation">
+                  <span class="font-medium text-14 sm:text-16">51-100</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="101-300" name="operation">
+                  <span class="font-medium text-14 sm:text-16">101-300</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="301-500" name="operation">
+                  <span class="font-medium text-14 sm:text-16">301-500</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" type="radio" value="501-1 000" name="operation">
+                  <span class="font-medium text-14 sm:text-16">501-1 000</span>
+                </label>
+              </div>
+            </div>
+            <div class="swiper-slide h-full pt-8 pb-4 px-4 sm:pb-8 sm:px-8" data-quiz-slide>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1 mb-4 sm:mb-6">
+                <div class="flex items-center gap-1 font-semibold text-blue text-18 leading-3">
+                  Шаг <div class="swiper-pagination w-auto"></div>
+                </div>
+                <div class="font-semibold text-18 leading-3">Наличие служебного транспорта</div>
+              </div>
+              <div class="flex flex-col gap-2 sm:gap-4" data-transport>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" data-transport-toggle="active" type="radio" value="Есть" name="transport">
+                  <span class="font-medium text-14 sm:text-16">Есть</span>
+                </label>
+                <label class="form-label" data-transport-label>
+                  <div class="form-wrapper">
+                    <div class="input-cover">
+                      <input class="input" data-transport-input data-input="number" type="text" disabled placeholder="Введите количество служебного транспорта" name="transport-quantity">
+                    </div>
+                    <span class="form-error" data-error>Пожалуйста, введите количество!</span>
+                  </div>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--radio mr-2 md:mr-4" data-transport-toggle="disabled" type="radio" value="Нет" name="transport">
+                  <span class="font-medium text-14 sm:text-16">Нет</span>
+                </label>
+              </div>
+            </div>
+            <div class="swiper-slide h-full pt-8 pb-4 px-4 sm:pb-8 sm:px-8" data-quiz-slide>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1 mb-4 sm:mb-6">
+                <div class="flex items-center gap-1 font-semibold text-blue text-18 leading-3">
+                  Шаг <div class="swiper-pagination w-auto"></div>
+                </div>
+                <div class="font-semibold text-18 leading-3">Что требуется делать?</div>
+              </div>
+              <div class="flex flex-col gap-2 sm:gap-4">
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--checkbox mr-2 md:mr-4" type="checkbox" value="Составление документов" name="requirements[]">
+                  <span class="font-medium text-14 sm:text-16">Составление документов</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--checkbox mr-2 md:mr-4" type="checkbox" value="Истребование документов с контрагентов" name="requirements[]">
+                  <span class="font-medium text-14 sm:text-16">Истребование документов с контрагентов</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--checkbox mr-2 md:mr-4" type="checkbox" value="Хранение и архивирование документов" name="requirements[]">
+                  <span class="font-medium text-14 sm:text-16">Хранение и архивирование документов</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--checkbox mr-2 md:mr-4" type="checkbox" value="Кадровый учет и расчет зарплаты" name="requirements[]">
+                  <span class="font-medium text-14 sm:text-16">Кадровый учет и расчет зарплаты</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--checkbox mr-2 md:mr-4" type="checkbox" value="Бухгалтерский учет в полном объеме" name="requirements[]">
+                  <span class="font-medium text-14 sm:text-16">Бухгалтерский учет в полном объеме</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--checkbox mr-2 md:mr-4" type="checkbox" value="Начисление налогов и сдача отчетности" name="requirements[]">
+                  <span class="font-medium text-14 sm:text-16">Начисление налогов и сдача отчетности</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--checkbox mr-2 md:mr-4" type="checkbox" value="Обучение/контроль/консалтинг" name="requirements[]">
+                  <span class="font-medium text-14 sm:text-16">Обучение/контроль/консалтинг</span>
+                </label>
+              </div>
+            </div>
+            <div class="swiper-slide h-full pt-8 pb-4 px-4 sm:pb-8 sm:px-8" data-quiz-slide>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1 mb-4 sm:mb-6">
+                <div class="flex items-center gap-1 font-semibold text-blue text-18 leading-3">
+                  Шаг <div class="swiper-pagination w-auto"></div>
+                </div>
+                <div class="font-semibold text-18 leading-3">Выберите дополнительные услуги</div>
+              </div>
+              <div class="flex flex-col gap-2 sm:gap-4">
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--checkbox mr-2 md:mr-4" type="checkbox" value="Консультация бухгалтера" name="service[]">
+                  <span class="font-medium text-14 sm:text-16">Консультация бухгалтера</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--checkbox mr-2 md:mr-4" type="checkbox" value="Консультация юриста" name="service[]">
+                  <span class="font-medium text-14 sm:text-16">Консультация юриста</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--checkbox mr-2 md:mr-4" type="checkbox" value="Составление договора/письма/претензии/жалобы" name="service[]">
+                  <span class="font-medium text-14 sm:text-16">Составление договора/письма/претензии/жалобы</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--checkbox mr-2 md:mr-4" type="checkbox" value="Eдиноразовая услуга по составлению отчетности" name="service[]">
+                  <span class="font-medium text-14 sm:text-16">Eдиноразовая услуга по составлению отчетности</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--checkbox mr-2 md:mr-4" type="checkbox" value="Услуга «проверка контрагентов»" name="service[]">
+                  <span class="font-medium text-14 sm:text-16">Услуга «проверка контрагентов»</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--checkbox mr-2 md:mr-4" type="checkbox" value="Внесение изменений в ЕГРЮЛ" name="service[]">
+                  <span class="font-medium text-14 sm:text-16">Внесение изменений в ЕГРЮЛ</span>
+                </label>
+                <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
+                  <input class="switch switch--checkbox mr-2 md:mr-4" type="checkbox" value="Услуга по регистрации/закрытию бизнеса" name="service[]">
+                  <span class="font-medium text-14 sm:text-16">Услуга по регистрации/закрытию бизнеса</span>
+                </label>
+              </div>
+            </div>
+            <div class="swiper-slide h-full pt-8 pb-4 px-4 sm:pb-8 sm:px-8" data-quiz-slide>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1 mb-4 sm:mb-6">
+                <div class="flex items-center gap-1 font-semibold text-blue text-18 leading-3">
+                  Шаг <div class="swiper-pagination w-auto"></div>
+                </div>
+                <div class="font-semibold text-18 leading-3">Желаемая стоимость за бух. обслуживание?</div>
+              </div>
+              <label class="form-label" data-label="input">
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input" data-input="number" type="text" placeholder="Введите желаемую стоимость" name="price">
+                  </div>
+                  <span class="form-error" data-error>Пожалуйста, введите желаемую стоимость!</span>
+                </div>
+              </label>
+            </div>
+            <div class="swiper-slide h-full pt-8 pb-4 px-4 sm:pb-8 sm:px-8" data-quiz-slide>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1 mb-4 sm:mb-6">
+                <div class="flex items-center gap-1 font-semibold text-blue text-18 leading-3">
+                  Шаг <div class="swiper-pagination w-auto"></div>
+                </div>
+                <div class="font-semibold text-18 leading-3">Введите телефон для связи</div>
+              </div>
+              <label class="form-label mb-4" data-label="input">
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input" data-input="tel" type="tel" placeholder="+7 (999) 999-99-99" name="tel">
+                  </div>
+                  <span class="form-error" data-error>Пожалуйста, введите ваш номер!</span>
+                </div>
+              </label>
+              <div class="font-normal text-14 md:text-16 leading-4 cursor-pointer" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">
+                <span class="opacity-60">Отправляя форму, вы даете согласие на</span>
+                <span class="underline underline-offset-4">обработку персональных данных</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 pb-8 pt-4 px-4 sm:pt-8 sm:px-8">
+          <button class="swiper-button-prev default btn btn-black btn-lg btn-contur inset-0 w-auto mt-0" data-waved="dark">Назад</button>
+          <button class="swiper-button-next default btn btn-primary btn-lg btn-fill inset-0 w-auto mt-0" data-waved="dark">
+            <span class="sm:hidden">Вперёд</span>
+            <span class="hidden sm:block">Следующий вопрос</span>
+          </button>
+          <button class="quiz-slider-submit hidden btn btn-primary btn-lg btn-fill" data-waved="dark" type="submit">Отправить</button>
+        </div>
+      </div>
+      <div class="hidden items-center min-h-[500px] py-8 px-4 sm:px-8" data-quiz-success>
+        <p class="font-medium text-20 sm:text-24 leading-4">
+          <span class="text-blue">Форма успешно отправлена!</span> <br class="sm:hidden"> Мы перезвоним вам в течение 30 минут, чтобы уточнить детали и бесплатно проконсультировать вас
+        </p>
+      </div>
+    </form>
+    <div class="hidden xl:block relative w-full max-w-[670px]">
+      <div class="pack pack-[105] bg-grey rounded-6">
+        <div class="loader">
+          <span class="loader-progress">
+            <svg class="loader-icon icon">
+              <use xlink:href="img/icons.svg#loader">
+            </svg>
+          </span>
+        </div>
+        <picture>
+          <source srcset="img/pictures/quiz.webp" type="image/webp">
+          <img class="image" loading="lazy" src="img/pictures/quiz.png" alt="">
+        </picture>
+      </div>
+      <div class="absolute top-4 right-4 bg-white rounded-6 w-full max-w-[415px] p-5">
+        <p class="font-normal text-14 leading-4">
+          Бухгалтерское сопровождение позволяет сократить затраты на <b>30%</b>. Вам не надо покупать бухгалтерскую программу и электронный документооборот, арендовать помещение, оплачивать обучение и литературу, закупать оргтехнику и расходуемые материалы. Вы получаете уже <b>полностью укомплектованную</b> бухгалтерию.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Работа -->
 
@@ -256,7 +597,7 @@
   },
 ] %>
 
-<section class="services container relative bg-primary overflow-hidden">
+<section class="container relative bg-primary overflow-hidden">
   <div class="absolute inset-0">
     <div class="pack w-full h-full">
       <picture>
@@ -309,7 +650,7 @@
         <div class="relative">
           <h4 class="font-bold text-20 sm:text-24 leading-2 tracking-wide mb-2">Персональная бесплатная консультация</h4>
           <p class="font-normal text-16 leading-4 opacity-80 mb-4">Оставьте свои контакты, мы перезвоним вам и с удовольствием ответим на все ваши вопросы</p>
-          <form class="form w-full max-w-[325px] mb-4" data-form="submit">
+          <form class="form w-full sm:max-w-[325px] mb-4" data-form="submit">
             <input type="hidden" value="Главная" name="theme">
             <label class="form-label mb-4" data-label="input">
               <span class="font-medium text-18 mb-3">Ваше имя</span>
@@ -331,7 +672,7 @@
             </label>
             <button class="btn btn-primary btn-lg btn-fill" data-waved="dark" type="submit">Получить консультацию</button>
           </form>
-          <div class="font-normal text-14 md:text-16 leading-4 cursor-pointer">
+          <div class="font-normal text-14 md:text-16 leading-4 cursor-pointer" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">
             <span class="opacity-60">Отправляя форму, вы даете согласие на</span> <br class="xl:hidden">
             <span class="underline underline-offset-4">обработку персональных данных</span>
           </div>
@@ -409,12 +750,12 @@
   }
 ] %>
 
-<section class="stages container" data-listing="3">
+<section class="container" data-listing="3">
   <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Как мы работаем</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8">
     <% for (var i = 0; i < stages.length; i++) { %>
       <div class="<%= stages[i].item %> min-h-[230px]" <%= stages[i].data %>>
-        <div class="stages__item card h-full">
+        <div class="card gradient h-full">
           <div class="card-content text-white">
             <div class="flex items-center justify-between gap-5 bg-sky p-5">
               <h4 class="font-bold text-20 md:text-24"><%= stages[i].title %></h4>
@@ -433,4 +774,168 @@
   <button class="sm:hidden btn btn-second btn-lg btn-fill gradient mx-auto mt-10" data-listing-show data-waved="light">Показать ещё</button>
 </section>
 
-<%= require('./includes/footer.html').default %>
+<!-- О нас -->
+
+<section class="container container--xs bg-black bg-opacity-5">
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">О нашей компании</h2>
+  <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-5 bg-white rounded-6 shadow-md p-3 md:p-10 xl:p-5">
+    <div class="order-2 xl:order-1 flex flex-col w-full xl:max-w-[535px] pl-2 pr-2 pb-5 md:pl-0 md:pr-0 md:pb-0 xl:pl-11">
+      <p class="order-3 xl:order-1 font-medium text-16 leading-4 tracking-wide opacity-80 mb-5">
+        Опираясь на свой опыт, я часто сталкиваюсь с одними  и теми же ситуациями — запущенный учет, или вовсе  не вёлся. В результате заблокированные счета, штрафы  и пени. Такие проблемы могут привести к серьезным  финансовым потерям и даже к уголовной ответственности, если не будут своевременно решены. 
+      </p>
+      <p class="order-4 xl:order-2 font-medium text-16 leading-4 tracking-wide opacity-80 mb-5">
+        Поэтому, моя задача как бухгалтера заключается не только в том, чтобы вести учет правильно, но и в том, чтобы предотвращатьподобные ситуации.
+      </p>
+      <p class="order-5 xl:order-3 font-medium text-16 leading-4 tracking-wide opacity-80 mb-5">
+        Мы подскажем, где «подстелить солому», оградим от блокировок счетов и выездных проверок, научим быть незаметными для налоговой, как избежать вызовов «на ковёр» в налоговую и неприятных запросов, которые съедают ваше время и нервы.
+      </p>
+      <p class="order-6 xl:order-4 font-medium text-16 leading-4 tracking-wide opacity-80 xl:mb-6">
+        Развивайте свой бизнес, а скучную бухгалтерию поручите нам.
+      </p>
+      <h4 class="order-1 xl:order-5 font-semibold text-gradient text-28 md:text-32 lg:text-36 leading-2 tracking-wide mb-2">Пшеничная Юлия</h4>
+      <p class="order-2 xl:order-6 font-medium text-18 leading-2 tracking-wide mb-6 xl:mb-0">Директор компании</p>
+    </div>
+    <div class="order-1 xl:order-2 w-full md:max-w-[400px] xl:max-w-[550px]">
+      <div class="pack pack-[95] bg-grey rounded-6">
+        <div class="loader">
+          <span class="loader-progress">
+            <svg class="loader-icon icon">
+              <use xlink:href="img/icons.svg#loader">
+            </svg>
+          </span>
+        </div>
+        <picture>
+          <source srcset="img/pictures/about.webp" type="image/webp">
+          <img class="image" loading="lazy" src="img/pictures/about.jpg" alt="">
+        </picture>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Отзывы -->
+
+<section class="reviews container overflow-hidden">
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Отзывы наших клиентов</h2>
+  <div class="reviews-slider relative">
+    <div class="swiper swiper--overwrap">
+      <div class="swiper-wrapper">
+        <% for (var i = 0; i < 6; i++) { %>
+          <div class="swiper-slide h-auto">
+            <div class="card h-full p-5 sm:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
+                <div class="pack pack-box bg-grey rounded-max border border-solid border-black border-opacity-20 min-w-[50px] w-[50px] sm:min-w-[70px] sm:w-[70px] mb-4 sm:mb-0 sm:mr-4">
+                  <div class="loader">
+                    <span class="loader-progress">
+                      <svg class="loader-icon icon">
+                        <use xlink:href="img/icons.svg#loader">
+                      </svg>
+                    </span>
+                  </div>
+                  <picture>
+                    <source srcset="img/pictures/plug.webp" type="image/webp">
+                    <img class="image" loading="lazy" src="img/pictures/plug.jpg" alt="">
+                  </picture>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-semibold text-gradient text-20 lg:text-24 leading-2 mb-1">Станислав Увайский</span>
+                  <span class="font-normal text-14 lg:text-16 leading-2">Компания ООО «СмартНефть»</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <p class="font-normal text-14 sm:text-16 leading-5">
+                  Ответственность и доброжелательность сделали наше сотрудничество приятным, а профессионализм персонала — плодотворным и эффективным. Я сделал правильный выбор. Готов рекомендовать эту компанию, как надежного партнера.
+                </p>
+                <div class="mt-auto pt-5">
+                  <button class="btn btn-second font-normal underline underline-offset-4" data-waved="light">Читать далее...</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+    <div class="swiper-pagination md:hidden text-primary mt-10"></div>
+    <button class="swiper-button-prev btn btn-black btn-fade hidden md:flex" data-waved="light">
+      <svg class="icon text-white text-20">
+        <use xlink:href="img/icons.svg#arrow-left">
+      </svg>
+    </button>
+    <button class="swiper-button-next btn btn-black btn-fade hidden md:flex" data-waved="light">
+      <svg class="icon text-white text-20">
+        <use xlink:href="img/icons.svg#arrow-right">
+      </svg>
+    </button>
+  </div>
+</section>
+
+<!-- Вопросы -->
+
+<section class="questions container bg-black bg-opacity-5">
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Часто задаваемые вопросы</h2>
+  <div class="flex flex-col gap-5 md:gap-7 mb-7 md:mb-14">
+    <% for (var i = 0; i < 6; i++) { %>
+      <div class="questions__accordion card rounded-3 sm:rounded-6 py-6 px-4 md:py-7 md:px-7" data-accordion="hidden">
+        <div class="flex items-center justify-between">
+          <p class="font-semibold text-14 md:text-16 lg:text-18 leading-4 tracking-wide mr-3">Какие есть штрафы за оформление человека на работу задним числом?</p>
+          <button class="questions__btn btn btn-second btn-fill gradient rounded-2 sm:rounded-3 min-w-[30px] w-[30px] h-[30px] sm:min-w-[40px] sm:w-[40px] sm:h-[40px]" data-accordion-toggle data-waved="light">
+            <svg class="questions__arrow icon text-14 sm:text-16 duration-3">
+              <use xlink:href="img/icons.svg#arrow-right">
+            </svg>
+          </button>
+        </div>
+        <div data-accordion-content>
+          <div class="pt-4">
+            <p class="font-normal text-14 sm:text-16 leading-4 tracking-wide opacity-80">
+              В 2023 году размер штрафа за за просрочку сдачи отчетности, либо представление неполных или недостоверных сведений о трудоустройстве физлиц составляет — 500 руб. в в отношении каждого застрахованного лица.<br>
+              За непредставление персонифицированных сведений о физлицах в налоговую теперь штрафуют на 200 Р, независимо от количества людей в форме. Форма предоставляется ежемесячно, поэтому если пропущенная дата приема превышает более одного месяца, то штраф будет за каждый месяц.
+            </p>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+  <div class="relative bg-primary rounded-4 md:rounded-6 overflow-hidden">
+    <div class="absolute inset-0">
+      <picture>
+        <source srcset="img/pictures/questions-bg.webp" type="image/webp">
+        <img class="image mix-blend-overlay" src="img/pictures/questions-bg.png" alt="">
+      </picture>
+    </div>
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 relative py-6 px-4 lg:py-4 lg:px-4">
+      <div class="flex flex-col text-white w-full md:max-w-[450px] lg:max-w-[500px] lg:pl-12">
+        <h2 class="font-medium text-28 md:text-32 lg:text-36 leading-2 mb-4">Готовы сотрудничать?</h2>
+        <p class="font-normal text-16 md:text-18 leading-4 mb-6 md:mb-10">Оставьте заявку, а мы перезвоним <br> и проконсультируем вас бесплатно!</p>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+          <button class="btn btn-primary btn-lg btn-light" data-waved="dark">Оставить заявку</button>
+          <button class="btn btn-white btn-lg btn-contur" data-waved="dark">Получить консультацию</button>
+        </div>
+      </div>
+      <div class="bg-white rounded-4 md:rounded-6 w-full md:max-w-[450px] lg:max-w-[350px] xl:max-w-[610px] p-5 lg:p-10">
+        <h2 class="font-semibold text-28 md:text-32 lg:text-36 leading-2 mb-6 md:mb-9">Полезные ссылки <br class="sm:hidden"> на блоки</h2>
+        <div class="flex flex-col items-start gap-4 sm:gap-8">
+          <a class="btn btn-primary font-medium text-black" data-scroll="top" data-waved="dark" href="">
+            Политика конфиденциальности
+            <svg class="icon hidden sm:block text-18 ml-2">
+              <use xlink:href="img/icons.svg#arrow-light">
+            </svg>
+          </a>
+          <a class="btn btn-primary font-medium text-black" data-scroll="top" data-waved="dark" href="">
+            Услуги
+            <svg class="icon hidden sm:block text-18 ml-2">
+              <use xlink:href="img/icons.svg#arrow-light">
+            </svg>
+          </a>
+          <a class="btn btn-primary font-medium text-black" data-scroll="top" data-waved="dark" href="">
+            Как начать работать с нами
+            <svg class="icon hidden sm:block text-18 ml-2">
+              <use xlink:href="img/icons.svg#arrow-light">
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({data, social}) %>

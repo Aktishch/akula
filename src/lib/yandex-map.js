@@ -1,4 +1,5 @@
 import ymaps from 'ymaps'
+import media from '../ts/functions/media'
 
 const init = () => {
 
@@ -6,14 +7,14 @@ const init = () => {
 
   ymaps.load('https://api-maps.yandex.ru/2.1/?lang=ru_RU').then((maps) => {
 
-    const center = [45.03191007458623, 38.921171499999936]
-    const mark = [45.03191007458623, 38.921171499999936]
+    const center = window.screen.width > media.lg ? [45.02260796561568, 38.979863260574355] : [45.022615574587945, 38.98088250000001]
+    const mark = [45.022615574587945, 38.98088250000001]
     const inputs = [...document.querySelectorAll('[data-suggest-view]')]
 
     const map = new maps.Map('map', {
 
       center: center,
-      zoom: 16
+      zoom: 17
 
     })
 
@@ -21,8 +22,8 @@ const init = () => {
 
       iconLayout: 'default#image',
       iconImageHref: '../img/pictures/geo.png',
-      iconImageSize: [40, 50],
-      iconImageOffset: [-20, -50]
+      iconImageSize: [50, 50],
+      iconImageOffset: [-25, -25]
 
     })
 
@@ -42,9 +43,7 @@ const init = () => {
     map.controls.remove('trafficControl')
     map.controls.remove('typeSelector')
     map.controls.remove('fullscreenControl')
-    map.controls.remove('zoomControl')
     map.controls.remove('rulerControl')
-    map.behaviors.disable(['scrollZoom'])
     map.geoObjects.add(placemark)
 
   }).catch((error) =>
