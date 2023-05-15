@@ -36,7 +36,7 @@
     </a>
     <nav class="hidden xl:flex items-center justify-between gap-6 mx-auto">
       <% for (var i = 0; i < nav.length; i++) { %>
-        <a class="btn btn-second font-medium text-black rounded-1 py-2 px-1" data-scroll="top" data-waved="dark" href="#<%= nav[i].id %>"><%= nav[i].text %></a>
+        <a class="btn btn-second font-medium text-black rounded-1 py-2 px-1" data-scroll data-waved="dark" href="#<%= nav[i].id %>"><%= nav[i].text %></a>
       <% } %>
     </nav>
     <div class="hidden md:flex items-center justify-between gap-1">
@@ -62,7 +62,7 @@
   <!-- Мобильное меню -->
 
   <div class="mobile-menu fixed inset-0 z-6 duration-1" data-mobile="hidden">
-    <div class="mobile-menu__content flex flex-col bg-white bg-opacity-80 overflow-auto backdrop-blur-sm w-full max-w-[375px] h-full p-3 duration-3">
+    <div class="mobile-menu__content flex flex-col bg-white bg-opacity-90 overflow-auto backdrop-blur-sm w-full max-w-[375px] h-full p-3 duration-3">
       <div class="mobile-menu__head flex items-center justify-between gap-2 border-b border-solid border-b-black border-opacity-20 pb-3 duration-5 delay-3">
         <a class="btn btn-second w-[140px]" data-waved="dark" href="/">
           <picture>
@@ -78,11 +78,56 @@
       </div>
       <div class="mobile-menu__nav flex flex-col items-start gap-5 py-10 duration-9 delay-5">
         <% for (var i = 0; i < nav.length; i++) { %>
-          <a class="link font-medium text-20" data-scroll="top" data-waved="dark" href="#<%= nav[i].id %>"><%= nav[i].text %></a>
+          <a class="link font-medium text-20" data-scroll data-waved="dark" href="#<%= nav[i].id %>"><%= nav[i].text %></a>
         <% } %>
       </div>
       <div class="mobile-menu__footer mt-auto pb-5 duration-5 delay-9">
-        fsdfdsfsdf
+        <div class="flex flex-col gap-7 mb-5 md:mb-8">
+          <div class="flex items-center">
+            <div class="flex items-center justify-center gradient rounded-2 min-w-[34px] w-[34px] h-[34px] mr-3">
+              <svg class="icon text-white text-20">
+                <use xlink:href="img/icons.svg#geo">
+              </svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-semibold text-16 md:text-18 leading-1">Адрес</span>
+              <p class="font-medium text-14 sm:text-16 md:text-18 opacity-80">г. Краснодар, ул.Леваневского, дом 2, офис 9</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <div class="flex items-center justify-center gradient rounded-2 min-w-[34px] w-[34px] h-[34px] mr-3">
+              <svg class="icon text-white text-20">
+                <use xlink:href="img/icons.svg#phone">
+              </svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-semibold text-16 md:text-18 leading-1">Телефон</span>
+              <p class="font-medium text-14 sm:text-16 md:text-18 opacity-80">
+                <a class="link" href="tel: +7(861)213-29-01">+7(861)213-29-01</a>, <a class="link" href="tel: +7(967)301-99-67">+7(967)301-99-67</a>
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <div class="flex items-center justify-center gradient rounded-2 min-w-[34px] w-[34px] h-[34px] mr-3">
+              <svg class="icon text-white text-20">
+                <use xlink:href="img/icons.svg#email">
+              </svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-semibold text-16 md:text-18 leading-1">Почта</span>
+              <p class="font-medium text-14 sm:text-16 md:text-18 opacity-80">
+                <a class="link" href="mailto: info@akula-buh.ru">info@akula-buh.ru</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <% for (var i = 0; i < social.length; i++) { %>
+            <a class="btn btn-second rounded-2 p-1" data-waved="light" href="" target="_blank">
+              <img class="icon text-42 rounded-2" src="img/pictures/<%= social[i] %>.svg" alt="">
+            </a>
+          <% } %>
+        </div>
       </div>
     </div>
   </div>

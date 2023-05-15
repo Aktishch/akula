@@ -1,6 +1,14 @@
-<div class="dialog dialog-xs flex flex-col items-center justify-center rounded-3 py-10 px-5 dark:bg-black dark:text-white">
-  <svg class="icon text-green text-9xl mb-5">
-    <use xlink:href="img/icons.svg#success">
-  </svg>
-  <h2 class="font-alt font-semibold text-24 leading-3">Ваша заявка успешно отправлена!</h2>
+<div class="dialog dialog-lg rounded-4 sm:rounded-8 py-8 px-4 md:py-24 md:px-12">
+  <div class="flex flex-col md:flex-row items-center justify-between gap-5">
+    <div class="order-2 md:order-1 flex flex-col items-center md:items-start w-full max-w-[355px]">
+      <h2 class="font-bold text-center md:text-left text-22 md:text-28 lg:text-36 leading-3 mb-3">Спасибо. Форма успешно отправлена!</h2>
+      <p class="font-medium text-center md:text-left text-16 md:text-18 leading-4 opacity-70 mb-6 md:mb-10 lg:mb-20">Мы перезвоним в ближайшее время, проконсультируем вас и обсудим все необходимые делали</p>
+      <button class="btn btn-primary btn-lg btn-fill" data-waved="dark" data-fancybox-close>Закрыть</button>
+    </div>
+    <div class="order-1 md:order-2 pack pack-box bg-primary rounded-10 w-full max-w-[250px] md:max-w-[325px]">
+      <div class="flex items-center justify-center absolute inset-0">
+        <img class="icon text-9xl" src="img/pictures/checkbox.svg" alt="">
+      </div>
+    </div>
+  </div>
 </div>

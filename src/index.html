@@ -9,23 +9,23 @@
 
   var nav = [
     {
-      id: '',
-      text: 'Наши услуги'
-    },
-    {
-      id: '',
+      id: 'benefit',
       text: 'Преимущества'
     },
     {
-      id: '',
+      id: 'services',
+      text: 'Наши услуги'
+    },
+    {
+      id: 'about',
       text: 'О нас'
     },
     {
-      id: '',
+      id: 'questions',
       text: 'Вопросы'
     },
     {
-      id: '',
+      id: 'contacts',
       text: 'Контакты'
     }
   ]
@@ -40,15 +40,15 @@
 
 <main class="main container container--xs flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-10 lg:gap-5 overflow-hidden min-h-[660px]">
   <div class="order-2 lg:order-1 flex flex-col w-full sm:max-w-[510px]">
-    <h1 class="font-bold text-30 sm:text-36 md:text-42 xl:text-48 leading-2 mb-5 md:mb-7">
+    <h1 class="font-bold text-30 sm:text-36 md:text-42 xl:text-48 leading-2 mb-5 md:mb-7 duration-5 anim anim--up" data-anim="hidden">
       <span class="text-gradient">Бухгалтерские услуги</span> для бизнеса различных форм собственности
     </h1>
-    <p class="font-normal text-16 leading-4 mb-10 md:mb-14 lg:mb-20">
+    <p class="font-normal text-16 leading-4 mb-10 md:mb-14 lg:mb-20 duration-5 lg:delay-3 anim anim--up" data-anim="hidden">
       Мы готовы помочь восстановить бухучет, исправить ошибки бухгалтеров, оптимизировать налоги, провести сверки с налоговой и контрагентами, сдать отчетность вовремя и без головной боли
     </p>
-    <div class="flex flex-col sm:flex-row flex-wrap items-center gap-4">
-      <button class="btn btn-primary btn-lg btn-fill font-semibold w-full sm:w-auto" data-waved="dark">Оставить заявку</button>
-      <button class="btn btn-black btn-lg btn-contur opacity-80 w-full sm:w-auto" data-waved="dark">Узнать подробнее</button>
+    <div class="flex flex-col sm:flex-row flex-wrap items-center gap-4 duration-5 lg:delay-5 anim anim--up" data-anim="hidden">
+      <button class="btn btn-primary btn-lg btn-fill font-semibold w-full sm:w-auto" data-waved="dark" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-feedback.html">Оставить заявку</button>
+      <a class="btn btn-black btn-lg btn-contur opacity-80 w-full sm:w-auto" data-scroll data-waved="dark" href="#work">Узнать подробнее</a>
     </div>
   </div>
   <div class="order-1 lg:order-2 pack pack-box sm:pack-[87] bg-primary rounded-10 sm:rounded-[80px] sm:overflow-visible w-full sm:max-w-[480px]">
@@ -80,8 +80,8 @@
 <!-- Квиз -->
 
 <section class="quiz container bg-black bg-opacity-5">
-  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Узнайте стоимость бухгалтерского обслуживания для вас</h2>
-  <div class="flex items-center justify-between bg-white rounded-4 sm:rounded-6 shadow-md w-full max-w-[700px] xl:max-w-none xl:p-4 mx-auto">
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8 duration-5 anim anim--up" data-anim="hidden">Узнайте стоимость бухгалтерского обслуживания для вас</h2>
+  <div class="flex items-center justify-between bg-white rounded-4 sm:rounded-6 shadow-md w-full max-w-[700px] xl:max-w-none xl:p-4 mx-auto duration-5 anim anim--fade" data-anim="hidden">
     <form class="form w-full xl:max-w-[520px]" data-form="quiz">
       <div class="quiz-slider" data-quiz="stop">
         <div class="swiper">
@@ -230,7 +230,7 @@
                     <div class="input-cover">
                       <input class="input" data-transport-input data-input="number" type="text" disabled placeholder="Введите количество служебного транспорта" name="transport-quantity">
                     </div>
-                    <span class="form-error" data-error>Пожалуйста, введите количество!</span>
+                    <span class="form-error" data-transport-error data-error>Пожалуйста, введите количество!</span>
                   </div>
                 </label>
                 <label class="flex items-center bg-grey bg-opacity-30 rounded-3 cursor-pointer p-2 sm:p-4">
@@ -395,36 +395,44 @@
 
 <% var work = [
   {
+    delay: '',
     icon: 'document',
     number: '01',
     title: 'Оставьте заявку на сайте',
     text: 'Оставьте заявку на нашем сайте и наш специалист <br class="hidden xl:block"> свяжется с вами'
   },
   {
+    delay: 'sm:delay-2',
     icon: 'user',
     number: '02',
     title: 'Переговоры и анализ бизнеса',
     text: 'Обсудим текущую ситуацию в вашей компании, функционал <br class="hidden xl:block"> и объемы операций. Предложим вам варианты решений'
   },
   {
+    delay: '',
     icon: 'pen',
     number: '03',
     title: 'Подписание договора',
     text: 'Подпишем договор и соглашение о конфиденциальности, которые <br class="hidden xl:block"> гарантируют сохранность вашей информации'
   },
   {
+    delay: '',
+    delay: 'sm:delay-2',
     icon: 'folder',
     number: '04',
     title: 'Передача документов',
     text: 'Примем от вас документы, определим и согласуем <br class="hidden xl:block"> график работы'
   },
   {
+    delay: '',
     icon: 'cup',
     number: '05',
     title: 'Вы спокойны за бухгалтерию',
     text: 'Экономим ваши деньги, время и нервы. Ваша компания на полном <br class="hidden xl:block"> бухгалтерском обслуживании'
   },
   {
+    delay: '',
+    delay: 'sm:delay-2',
     icon: 'rocket',
     number: '06',
     title: 'Начало работы',
@@ -432,13 +440,13 @@
   }
 ] %>
 
-<section class="work container">
-  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Начать работать с нами просто</h2>
+<section class="work container" id="work">
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8 duration-5 anim anim--up" data-anim="hidden">Начать работать с нами просто</h2>
   <div class="work-slider">
     <div class="swiper swiper--overwrap">
       <div class="work-wrapper swiper-wrapper flex sm:grid sm:grid-cols-2 sm:gap-5 lg:gap-8">
         <% for (var i = 0; i < work.length; i++) { %>
-          <div class="swiper-slide h-auto">
+          <div class="swiper-slide h-auto sm:duration-5 <%= work[i].delay %> sm:anim sm:anim--up" data-anim="hidden">
             <div class="card h-full py-8 px-5 md:px-8" data-waved="dark">
               <div class="flex items-center justify-between mb-4">
                 <img class="icon text-50 md:text-7xl mr-3" src="img/pictures/<%= work[i].icon %>.svg" alt="">
@@ -459,10 +467,10 @@
 
 <!-- Выгода -->
 
-<section class="benefit container bg-black bg-opacity-5 overflow-hidden">
-  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Выгода в каждой детали</h2>
+<section class="benefit container bg-black bg-opacity-5 overflow-hidden" id="benefit">
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8 duration-5 anim anim--up" data-anim="hidden">Выгода в каждой детали</h2>
   <div class="grid grid-cols-12 md:auto-rows-[180px] gap-3 sm:gap-5">
-    <div class="order-1 col-12 md:col-6 xl:col-4 row-2">
+    <div class="order-1 col-12 md:col-6 xl:col-4 row-2 duration-5 anim anim--right" data-anim="hidden">
       <div class="relative h-[250px] md:h-full">
         <div class="benefit__block pack bg-primary rounded-6 h-full">
           <picture>
@@ -476,7 +484,7 @@
         </picture>
       </div>
     </div>
-    <div class="order-3 xl:order-2 col-6 md:col-3 xl:col-2 row-1">
+    <div class="order-3 xl:order-2 col-6 md:col-3 xl:col-2 row-1 duration-5 anim anim--down" data-anim="hidden">
       <div class="flex flex-col items-center lg:justify-center bg-white rounded-6 shadow-md h-full py-5 px-3 lg:py-3">
         <div class="benefit__cube flex items-center justify-center rounded-3 w-14 h-14 mb-3 sm:mb-6">
           <img class="icon text-30" src="img/pictures/money.svg" alt="">
@@ -484,7 +492,7 @@
         <h4 class="font-semibold text-center text-14 sm:text-16 leading-3">Уменьшение затрат <br> на бухгалтерию</h4>
       </div>
     </div>
-    <div class="order-2 xl:order-3 col-12 md:col-6 xl:col-4 row-1">
+    <div class="order-2 xl:order-3 col-12 md:col-6 xl:col-4 row-1 duration-5 anim anim--down" data-anim="hidden">
       <div class="benefit__block bg-primary text-white rounded-6 overflow-hidden h-full">
         <div class="flex items-center bg-primary py-4 px-4 smd:px-6">
           <img class="icon text-30 mr-3" src="img/pictures/book.svg" alt="">
@@ -495,7 +503,7 @@
         </div>
       </div>
     </div>
-    <div class="order-5 xl:order-4 col-12 md:col-6 xl:col-2 row-1 xl:row-2">
+    <div class="order-5 xl:order-4 col-12 md:col-6 xl:col-2 row-1 xl:row-2 duration-5 anim anim--left" data-anim="hidden">
       <div class="benefit__banner relative gradient rounded-5 overflow-hidden h-full py-5 px-4 sm:py-10 sm:px-6">
         <div class="hidden xl:flex items-end absolute inset-0">
           <picture>
@@ -509,7 +517,7 @@
         </div>
       </div>
     </div>
-    <div class="order-4 xl:order-5 col-6 md:col-3 xl:col-2 row-1">
+    <div class="order-4 xl:order-5 col-6 md:col-3 xl:col-2 row-1 duration-5 anim anim--up" data-anim="hidden">
       <div class="flex flex-col items-center lg:justify-center bg-white rounded-6 shadow-md h-full py-5 px-3 lg:py-3">
         <div class="benefit__cube flex items-center justify-center rounded-3 w-14 h-14 mb-3 sm:mb-6">
           <img class="icon text-30" src="img/pictures/protect.svg" alt="">
@@ -517,7 +525,7 @@
         <h4 class="font-semibold text-center text-14 sm:text-16 leading-3">Безопасность <br> данных</h4>
       </div>
     </div>
-    <div class="order-6 col-6 md:col-3 xl:col-2 row-1">
+    <div class="order-6 col-6 md:col-3 xl:col-2 row-1 duration-5 anim anim--down" data-anim="hidden">
       <div class="flex flex-col items-center lg:justify-center bg-grey rounded-6 h-full py-5 px-3 lg:py-3">
         <div class="benefit__cube flex items-center justify-center rounded-3 w-14 h-14 mb-3 sm:mb-6">
           <img class="icon text-30" src="img/pictures/card.svg" alt="">
@@ -525,7 +533,7 @@
         <h4 class="font-semibold text-center text-14 sm:text-16 leading-3">Работа с главным <br> бухгалтером</h4>
       </div>
     </div>
-    <div class="order-7 col-6 md:col-3 xl:col-2 row-1">
+    <div class="order-7 col-6 md:col-3 xl:col-2 row-1 duration-5 anim anim--down" data-anim="hidden">
       <div class="flex flex-col items-center lg:justify-center bg-grey rounded-6 h-full py-5 px-3 lg:py-3">
         <div class="benefit__cube flex items-center justify-center rounded-3 w-14 h-14 mb-3 sm:mb-6">
           <img class="icon text-30" src="img/pictures/message.svg" alt="">
@@ -539,7 +547,7 @@
 <!-- Направления -->
 
 <section class="directions container fading overflow-hidden">
-  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Оказываем бухгалтерскую помощь по многим направлениям</h2>
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8 duration-5 anim anim--up" data-anim="hidden">Оказываем бухгалтерскую помощь по многим направлениям</h2>
   <div class="directions-slider mb-4">
     <div class="swiper overflow-visible">
       <div class="directions-wrapper swiper-wrapper">
@@ -597,7 +605,7 @@
   },
 ] %>
 
-<section class="container relative bg-primary overflow-hidden">
+<section class="container relative bg-primary overflow-hidden" id="services">
   <div class="absolute inset-0">
     <div class="pack w-full h-full">
       <picture>
@@ -607,10 +615,10 @@
     </div>
   </div>
   <div class="relative text-white">
-    <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Наши услуги</h2>
+    <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8 duration-5 anim anim--up" data-anim="hidden">Наши услуги</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8 text-black">
       <% for (var i = 0; i < services.length; i++) { %>
-        <div class="flex flex-col bg-white rounded-6 overflow-hidden">
+        <div class="flex flex-col bg-white rounded-6 overflow-hidden duration-5 anim anim--up" data-anim="hidden">
           <div class="bg-grey py-6 px-5 lg:px-10">
             <h4 class="font-bold text-20 sm:text-24 leading-2 tracking-wide"><%= services[i].title %></h4>
           </div>
@@ -631,7 +639,7 @@
           </div>
         </div>
       <% } %>
-      <div class="relative bg-white rounded-6 overflow-hidden py-6 px-5 lg:px-10">
+      <div class="relative bg-white rounded-6 overflow-hidden py-6 px-5 lg:px-10 duration-5 anim anim--up" data-anim="hidden">
         <div class="hidden lg:block absolute inset-0">
           <div class="pack w-full h-full">
             <div class="loader">
@@ -693,14 +701,14 @@
     text: 'Мы храним данные на сервере 1С, что обеспечивает их <b>полную безопасность</b>. Даже если какой-то компьютер поломается, ваша бухгалтерия не пострадает, а бухгалтер будет работать с другого устройства.'
   },
   {
-    item: '',
+    item: 'lg:delay-2',
     data: '',
     title: 'Проверка',
     icon: 'list',
     text: 'Регулярно <b>сверяемся</b> с налоговой, чтобы все налоги были отражены правильно и не потерялись.'
   },
   {
-    item: '',
+    item: 'lg:delay-4',
     data: '',
     title: 'Гарантия',
     icon: 'shield',
@@ -714,14 +722,14 @@
     text: 'Вам не надо отвлекаться на бухгалтерские задачи: мы сами <b>скачаем</b> выписки, <b>подготовим</b> платежки, <b>соберем</b> информацию из кабинета ОФД.'
   },
   {
-    item: 'hidden sm:block',
+    item: 'hidden sm:block lg:delay-2',
     data: 'data-listing-item',
     title: 'Порядок',
     icon: 'folder',
     text: 'Бережно <b>раскладываем</b> по папочкам и <b>храним</b> ваши документы.'
   },
   {
-    item: 'hidden sm:block',
+    item: 'hidden sm:block lg:delay-4',
     data: 'data-listing-item',
     title: 'Надежность',
     icon: 'key',
@@ -735,14 +743,14 @@
     text: '<b>Сдаем все</b> отчеты без вашего участия: вы можете спокойно отдыхать даже в отчетный период.'
   },
   {
-    item: 'hidden sm:block',
+    item: 'hidden sm:block lg:delay-2',
     data: 'data-listing-item',
     title: 'Обучение',
     icon: 'cap',
     text: 'Постоянно <b>обучаемся</b>, чтобы быть в курсе тенденций налогового законодательства и <b>оградить</b> вас от необдуманных решений.'
   },
   {
-    item: 'hidden sm:block',
+    item: 'hidden sm:block lg:delay-4',
     data: 'data-listing-item',
     title: 'Консультация',
     icon: 'calc',
@@ -750,11 +758,11 @@
   }
 ] %>
 
-<section class="container" data-listing="3">
-  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Как мы работаем</h2>
+<section class="container overflow-hidden" data-listing="3">
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8 duration-5 anim anim--up" data-anim="hidden">Как мы работаем</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8">
     <% for (var i = 0; i < stages.length; i++) { %>
-      <div class="<%= stages[i].item %> min-h-[230px]" <%= stages[i].data %>>
+      <div class="<%= stages[i].item %> min-h-[230px] duration-5 anim anim--right" data-anim="hidden" <%= stages[i].data %>>
         <div class="card gradient h-full">
           <div class="card-content text-white">
             <div class="flex items-center justify-between gap-5 bg-sky p-5">
@@ -771,15 +779,17 @@
       </div>
     <% } %>
   </div>
-  <button class="sm:hidden btn btn-second btn-lg btn-fill gradient mx-auto mt-10" data-listing-show data-waved="light">Показать ещё</button>
+  <div class="duration-5 anim anim--up" data-anim="hidden">
+    <button class="sm:hidden btn btn-second btn-lg btn-fill gradient mx-auto mt-10" data-listing-show data-waved="light">Показать ещё</button>
+  </div>
 </section>
 
 <!-- О нас -->
 
-<section class="container container--xs bg-black bg-opacity-5">
-  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">О нашей компании</h2>
-  <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-5 bg-white rounded-6 shadow-md p-3 md:p-10 xl:p-5">
-    <div class="order-2 xl:order-1 flex flex-col w-full xl:max-w-[535px] pl-2 pr-2 pb-5 md:pl-0 md:pr-0 md:pb-0 xl:pl-11">
+<section class="container container--xs bg-black bg-opacity-5 overflow-hidden" id="about">
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8 duration-5 anim anim--up" data-anim="hidden">О нашей компании</h2>
+  <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-5 bg-white rounded-6 shadow-md p-3 md:p-10 xl:p-5 duration-5 anim anim--fade" data-anim="hidden">
+    <div class="order-2 xl:order-1 flex flex-col w-full xl:max-w-[535px] pl-2 pr-2 pb-5 md:pl-0 md:pr-0 md:pb-0 xl:pl-11 duration-5 anim anim--right" data-anim="hidden">
       <p class="order-3 xl:order-1 font-medium text-16 leading-4 tracking-wide opacity-80 mb-5">
         Опираясь на свой опыт, я часто сталкиваюсь с одними  и теми же ситуациями — запущенный учет, или вовсе  не вёлся. В результате заблокированные счета, штрафы  и пени. Такие проблемы могут привести к серьезным  финансовым потерям и даже к уголовной ответственности, если не будут своевременно решены. 
       </p>
@@ -796,7 +806,7 @@
       <p class="order-2 xl:order-6 font-medium text-18 leading-2 tracking-wide mb-6 xl:mb-0">Директор компании</p>
     </div>
     <div class="order-1 xl:order-2 w-full md:max-w-[400px] xl:max-w-[550px]">
-      <div class="pack pack-[95] bg-grey rounded-6">
+      <div class="pack pack-[95] bg-grey rounded-6 duration-5 anim anim--left" data-anim="hidden">
         <div class="loader">
           <span class="loader-progress">
             <svg class="loader-icon icon">
@@ -806,7 +816,7 @@
         </div>
         <picture>
           <source srcset="img/pictures/about.webp" type="image/webp">
-          <img class="image" loading="lazy" src="img/pictures/about.jpg" alt="">
+          <img class="image" src="img/pictures/about.jpg" alt="">
         </picture>
       </div>
     </div>
@@ -816,7 +826,7 @@
 <!-- Отзывы -->
 
 <section class="reviews container overflow-hidden">
-  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Отзывы наших клиентов</h2>
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8 duration-5 anim anim--up" data-anim="hidden">Отзывы наших клиентов</h2>
   <div class="reviews-slider relative">
     <div class="swiper swiper--overwrap">
       <div class="swiper-wrapper">
@@ -847,7 +857,7 @@
                   Ответственность и доброжелательность сделали наше сотрудничество приятным, а профессионализм персонала — плодотворным и эффективным. Я сделал правильный выбор. Готов рекомендовать эту компанию, как надежного партнера.
                 </p>
                 <div class="mt-auto pt-5">
-                  <button class="btn btn-second font-normal underline underline-offset-4" data-waved="light">Читать далее...</button>
+                  <button class="btn btn-second font-normal underline underline-offset-4" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-review.html">Читать далее...</button>
                 </div>
               </div>
             </div>
@@ -871,31 +881,33 @@
 
 <!-- Вопросы -->
 
-<section class="questions container bg-black bg-opacity-5">
-  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8">Часто задаваемые вопросы</h2>
+<section class="questions container bg-black bg-opacity-5 overflow-hidden" id="questions">
+  <h2 class="font-bold text-center text-28 md:text-32 lg:text-36 leading-2 mb-5 md:mb-8 duration-5 anim anim--up" data-anim="hidden">Часто задаваемые вопросы</h2>
   <div class="flex flex-col gap-5 md:gap-7 mb-7 md:mb-14">
     <% for (var i = 0; i < 6; i++) { %>
-      <div class="questions__accordion card rounded-3 sm:rounded-6 py-6 px-4 md:py-7 md:px-7" data-accordion="hidden">
-        <div class="flex items-center justify-between">
-          <p class="font-semibold text-14 md:text-16 lg:text-18 leading-4 tracking-wide mr-3">Какие есть штрафы за оформление человека на работу задним числом?</p>
-          <button class="questions__btn btn btn-second btn-fill gradient rounded-2 sm:rounded-3 min-w-[30px] w-[30px] h-[30px] sm:min-w-[40px] sm:w-[40px] sm:h-[40px]" data-accordion-toggle data-waved="light">
-            <svg class="questions__arrow icon text-14 sm:text-16 duration-3">
-              <use xlink:href="img/icons.svg#arrow-right">
-            </svg>
-          </button>
-        </div>
-        <div data-accordion-content>
-          <div class="pt-4">
-            <p class="font-normal text-14 sm:text-16 leading-4 tracking-wide opacity-80">
-              В 2023 году размер штрафа за за просрочку сдачи отчетности, либо представление неполных или недостоверных сведений о трудоустройстве физлиц составляет — 500 руб. в в отношении каждого застрахованного лица.<br>
-              За непредставление персонифицированных сведений о физлицах в налоговую теперь штрафуют на 200 Р, независимо от количества людей в форме. Форма предоставляется ежемесячно, поэтому если пропущенная дата приема превышает более одного месяца, то штраф будет за каждый месяц.
-            </p>
+      <div class="duration-5 anim anim--right" data-anim="hidden">
+        <div class="questions__accordion card rounded-3 sm:rounded-6 py-6 px-4 md:py-7 md:px-7" data-accordion="hidden">
+          <div class="flex items-center justify-between">
+            <p class="font-semibold text-14 md:text-16 lg:text-18 leading-4 tracking-wide mr-3">Какие есть штрафы за оформление человека на работу задним числом?</p>
+            <button class="questions__btn btn btn-second btn-fill gradient rounded-2 sm:rounded-3 min-w-[30px] w-[30px] h-[30px] sm:min-w-[40px] sm:w-[40px] sm:h-[40px]" data-accordion-toggle data-waved="light">
+              <svg class="questions__arrow icon text-14 sm:text-16 duration-3">
+                <use xlink:href="img/icons.svg#arrow-right">
+              </svg>
+            </button>
+          </div>
+          <div data-accordion-content>
+            <div class="pt-4">
+              <p class="font-normal text-14 sm:text-16 leading-4 tracking-wide opacity-80">
+                В 2023 году размер штрафа за за просрочку сдачи отчетности, либо представление неполных или недостоверных сведений о трудоустройстве физлиц составляет — 500 руб. в в отношении каждого застрахованного лица.<br>
+                За непредставление персонифицированных сведений о физлицах в налоговую теперь штрафуют на 200 Р, независимо от количества людей в форме. Форма предоставляется ежемесячно, поэтому если пропущенная дата приема превышает более одного месяца, то штраф будет за каждый месяц.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     <% } %>
   </div>
-  <div class="relative bg-primary rounded-4 md:rounded-6 overflow-hidden">
+  <div class="relative bg-primary rounded-4 md:rounded-6 overflow-hidden duration-5 anim anim--right" data-anim="hidden">
     <div class="absolute inset-0">
       <picture>
         <source srcset="img/pictures/questions-bg.webp" type="image/webp">
@@ -914,19 +926,19 @@
       <div class="bg-white rounded-4 md:rounded-6 w-full md:max-w-[450px] lg:max-w-[350px] xl:max-w-[610px] p-5 lg:p-10">
         <h2 class="font-semibold text-28 md:text-32 lg:text-36 leading-2 mb-6 md:mb-9">Полезные ссылки <br class="sm:hidden"> на блоки</h2>
         <div class="flex flex-col items-start gap-4 sm:gap-8">
-          <a class="btn btn-primary font-medium text-black" data-scroll="top" data-waved="dark" href="">
+          <span class="btn btn-primary font-medium text-black" data-waved="dark" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">
             Политика конфиденциальности
             <svg class="icon hidden sm:block text-18 ml-2">
               <use xlink:href="img/icons.svg#arrow-light">
             </svg>
-          </a>
-          <a class="btn btn-primary font-medium text-black" data-scroll="top" data-waved="dark" href="">
+          </span>
+          <a class="btn btn-primary font-medium text-black" data-scroll data-waved="dark" href="#services">
             Услуги
             <svg class="icon hidden sm:block text-18 ml-2">
               <use xlink:href="img/icons.svg#arrow-light">
             </svg>
           </a>
-          <a class="btn btn-primary font-medium text-black" data-scroll="top" data-waved="dark" href="">
+          <a class="btn btn-primary font-medium text-black" data-scroll data-waved="dark" href="#work">
             Как начать работать с нами
             <svg class="icon hidden sm:block text-18 ml-2">
               <use xlink:href="img/icons.svg#arrow-light">

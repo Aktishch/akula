@@ -1,0 +1,47 @@
+<div class="dialog dialog-lg rounded-4 sm:rounded-8 p-6">
+  <div class="flex items-center justify-between gap-5">
+    <div class="w-full max-w-[400px] md:pl-6 mx-auto md:mx-0">
+      <h2 class="font-bold text-28 md:text-32 lg:text-36 leading-3 mb-1">Оставить заявку</h2>
+      <p class="font-medium text-16 md:text-18 leading-4 opacity-70 mb-6">Оставьте заявку, мы перезвоним вам и уточним все необходимые детали</p>
+      <form class="form mb-4" data-form="submit">
+        <input type="hidden" value="Главная" name="theme">
+        <label class="form-label mb-4" data-label="input">
+          <span class="font-medium text-18 mb-3">Ваше имя</span>
+          <div class="form-wrapper">
+            <div class="input-cover">
+              <input class="input" data-input="name" type="text" placeholder="Введите имя..." name="name">
+            </div>
+            <span class="form-error" data-error>Пожалуйста, введите ваше имя!</span>
+          </div>
+        </label>
+        <label class="form-label mb-5" data-label="input">
+          <span class="font-medium text-18 mb-3">Телефон</span>
+          <div class="form-wrapper">
+            <div class="input-cover">
+              <input class="input" data-input="tel" type="tel" placeholder="+7 (999) 999-99-99" name="tel">
+            </div>
+            <span class="form-error" data-error>Пожалуйста, введите ваш номер!</span>
+          </div>
+        </label>
+        <button class="btn btn-primary btn-lg btn-fill md:w-max" data-waved="dark" type="submit">Отправить</button>
+      </form>
+      <div class="font-normal text-14 md:text-16 leading-4 cursor-pointer" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">
+        <span class="opacity-60">Отправляя форму, вы даете согласие <br class="hidden md:block"> на</span>
+        <span class="underline underline-offset-4">обработку персональных данных</span>
+      </div>
+    </div>
+    <div class="pack pack-sheet hidden md:block bg-grey rounded-6 w-full max-w-[455px]">
+      <div class="loader">
+        <span class="loader-progress">
+          <svg class="loader-icon icon">
+            <use xlink:href="img/icons.svg#loader">
+          </svg>
+        </span>
+      </div>
+      <picture>
+        <source srcset="img/pictures/feedback.webp" type="image/webp">
+        <img class="image" loading="lazy" src="img/pictures/feedback.jpg" alt="">
+      </picture>
+    </div>
+  </div>
+</div>

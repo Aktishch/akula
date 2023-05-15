@@ -119,8 +119,9 @@ const init = () => {
     slidesPerView: 1.2,
     slidesPerGroup: 1,
     spaceBetween: 16,
-    speed: 500,
+    speed: 1000,
     grabCursor: true,
+    loop: true,
 
     breakpoints: {
 
@@ -143,6 +144,14 @@ const init = () => {
         spaceBetween: 30
 
       }
+
+    },
+
+    autoplay: {
+
+      delay: 3000,
+      stopOnLastSlide: false,
+      disableOnInteraction: false
 
     }
 

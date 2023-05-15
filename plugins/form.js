@@ -56,10 +56,10 @@ module.exports = plugin(
           position: 'absolute',
           left: 0,
           right: 0,
-          bottom: '-18px',
+          bottom: '-16px',
           height: '16px',
           opacity: 0,
-          visiblity: 'hidden',
+          visibility: 'hidden',
           transition: '0.3s ease'
         }
       }
