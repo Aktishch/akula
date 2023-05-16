@@ -4,7 +4,8 @@ const init = (): void => {
 
     if ((event.target as HTMLInputElement).hasAttribute('data-transport-toggle')) {
 
-      const transport = (event.target as HTMLInputElement).closest('[data-transport]') as HTMLElement
+      const quiz = (event.target as HTMLInputElement).closest('[data-quiz]') as HTMLElement
+      const transport = quiz.querySelector('*[data-transport]') as HTMLElement
       const toggle = event.target as HTMLInputElement
       const label = transport.querySelector('*[data-transport-label]') as HTMLInputElement
       const input = transport.querySelector('*[data-transport-input]') as HTMLInputElement
@@ -14,15 +15,20 @@ const init = (): void => {
 
         label.setAttribute('data-label', 'input')
         input.removeAttribute('disabled')
+
         input.classList.add('input--error')
         error.classList.add('visible', 'opacity-100')
+
+        quiz.dataset.quiz = 'stop'
 
       } else {
 
         label.removeAttribute('data-label')
         input.setAttribute('disabled', 'disabled')
+
         input.classList.remove('input--error')
         error.classList.remove('visible', 'opacity-100')
+
         input.value = ''
 
       }
