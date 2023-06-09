@@ -1,0 +1,88 @@
+<%
+
+  var data = {
+
+    title: 'Акула',
+    status: false
+
+  }
+
+  var nav = [
+    {
+      id: 'benefit',
+      text: 'Преимущества'
+    },
+    {
+      id: 'services',
+      text: 'Наши услуги'
+    },
+    {
+      id: 'about',
+      text: 'О нас'
+    },
+    {
+      id: 'questions',
+      text: 'Вопросы'
+    },
+    {
+      id: 'contacts',
+      text: 'Контакты'
+    }
+  ]
+
+  var social = ['tg', 'inst', 'vk', 'wa']
+
+%>
+
+<%= _.template(require('./includes/header.html').default)({data, nav, social}) %>
+
+<main class="container container--xs flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 overflow-hidden w-full min-h-screen">
+  <div class="order-2 lg:order-1 flex flex-col items-start w-full max-w-[510px] lg:max-w-[650px] mx-auto lg:mx-0">
+    <div class="flex items-center gap-2 mb-5">
+      <% for (var i = 0; i < social.length; i++) { %>
+        <a class="btn btn-second rounded-2 p-1" data-waved="light" href="" target="_blank">
+          <img class="icon text-32 rounded-2" src="img/pictures/<%= social[i] %>.svg" alt="">
+        </a>
+      <% } %>
+    </div>
+    <h1 class="font-bold text-30 sm:text-36 md:text-42 xl:text-48 leading-2 mb-5 duration-5 anim anim--up" data-anim="hidden">
+      На сайте ведутся <br> <span class="text-gradient">технические работы</span>
+    </h1>
+    <p class="font-normal text-16 leading-4 mb-5 sm:mb-10 xl:mb-36 duration-5 delay-2 anim anim--up" data-anim="hidden">
+      Мы постараемся настроить сайт как можно быстрее.<br>
+      Приносим свои извинения за предоставленные неудобства.
+    </p>
+    <div class="flex flex-col xl:flex-row items-center gap-3 lg:gap-2 xl:gap-5 duration-5 delay-4 anim anim--up" data-anim="hidden">
+      <a class="btn btn-second font-medium" data-waved="light" href="tel: +7(861)213-29-01">
+        <svg class="icon text-24 mr-2">
+          <use xlink:href="img/icons.svg#phone">
+        </svg>
+        <span class="text-black text-20">+7(861)213-29-01</span>
+      </a>
+      <a class="btn btn-second font-medium" data-waved="light" href="tel: +7(967)301-99-67">
+        <svg class="icon text-24 mr-2">
+          <use xlink:href="img/icons.svg#phone">
+        </svg>
+        <span class="text-black text-20">+7(967)301-99-67</span>
+      </a>
+      <a class="btn btn-second font-medium" data-waved="light" href="mailto: info@akula-buh.ru">
+        <svg class="icon text-24 mr-2">
+          <use xlink:href="img/icons.svg#email">
+        </svg>
+        <span class="text-black text-20">info@akula-buh.ru</span>
+      </a>
+    </div>
+  </div>
+  <div class="order-1 lg:order-2 pack pack-box sm:pack-[87] bg-primary rounded-10 sm:rounded-[80px] w-full max-w-[510px] lg:max-w-[520px] mx-auto lg:mx-0 duration-5 anim anim--left" data-anim="hidden">
+    <picture>
+      <source srcset="img/pictures/main-bg.webp" type="image/webp">
+      <img class="image mix-blend-overlay" src="img/pictures/main-bg.png" alt="">
+    </picture>
+    <picture>
+      <source srcset="img/pictures/logo-big.webp" type="image/webp">
+      <img class="image image-scale-down p-10" src="img/pictures/logo-big.png" alt="">
+    </picture>
+  </div>
+</main>
+
+<%= _.template(require('./includes/footer.html').default)({data, social}) %>
