@@ -11,9 +11,11 @@ module.exports = {
   ],
 
   corePlugins: {
-
     container: false
+  },
 
+  future: {
+    hoverOnlyWhenSupported: true,
   },
 
   theme: {
