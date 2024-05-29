@@ -21,7 +21,7 @@ const init = () => {
     const placemark = new maps.Placemark((mark), {}, {
 
       iconLayout: 'default#image',
-      iconImageHref: '../img/pictures/geo.png',
+      iconImageHref: '/local/templates/main/img/pictures/geo.png',
       iconImageSize: [50, 50],
       iconImageOffset: [-25, -25]
 

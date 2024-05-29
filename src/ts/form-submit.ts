@@ -40,7 +40,7 @@ const formSubmit = (event: Event): void => {
 
       dialog.close()
 
-      dialog.open('/dialogs/dialog-submit.php')
+      dialog.open('/ajax/dialog-submit.php')
 
       form.reset()
 

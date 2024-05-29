@@ -42,7 +42,7 @@ const preloader = (): void => {
 
     [{
 
-      src: '/dialogs/preloader.php',
+      src: '/ajax/preloader.php',
       type: 'ajax'
 
     }],
